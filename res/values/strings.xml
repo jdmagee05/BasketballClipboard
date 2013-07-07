@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- MainActivity Strings -->
+    <string name="app_name">Basketball Assistant</string>
+    <string name="action_settings">Settings</string>
+    <string name="clipboard">Clipboard</string>
+    <string name="practice_planner">Practice Planner</string>
+    <string name="stat_sheet">Statistics Sheet</string>
+
+    <!-- Practice Planner Strings -->
+    <string name="title_activity_practice_planner">Practice Planner</string>
+    <string name="practice_hint">Edit your practice here.</string>
+    <string name="practice_title">Practice Planner</string>
+    <string name="new_practice">New</string>
+    <string name="saveAs_practice">Save As</string>
+    <string name="save_practice">Save</string>
+    <string name="open_practice">Open</string>
+    <string name="start_time_text">Time:</string>
+    <string name="start_time_hint">Start Time</string>
+    <string name="duration_text">Duration (minutes):</string>
+    <string name="duration_hint">Duration</string>
+    <string name="drill">Drill:</string>
+    <string name="drill_hint">Enter your drill here!</string>
+    <string name="add_drill">+ Add Drill</string>
+    <string name="title_activity_clipboard">ClipboardActivity</string>
+
+    <!-- Clipboard Strings -->
+    <string name="content_desc">An image of a basketball court.</string>
+    <string name="new_clipboard">New</string>
+    <string name="blue">Blue</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="eraser">Eraser</string>
+    <string name="title_activity_stat_sheet">Stat Sheet</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <!-- Stat Sheet Strings -->
+    <string name="player_header">Player</string>
+    <string name="points_header">Points</string>
+    <string name="assists_header">Assists</string>
+    <string name="rebs_header">Rebounds</string>
+    <string name="steals_header">Steals</string>
+    <string name="player_hint">Player Name</string>
+    
+
+</resources>

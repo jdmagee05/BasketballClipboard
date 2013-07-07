@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#000000" >
+
+    <Button
+        android:id="@+id/clipboardButton"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_weight="1"
+        android:text="@string/clipboard"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:background="#FFA500"
+        android:onClick="goToClipboard" />
+
+    <Button
+        android:id="@+id/practiceButton"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_weight="1"
+        android:layout_marginTop="2dp"
+        android:onClick="goToPractice"
+        android:text="@string/practice_planner"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:background="#FFA500" />
+
+    <Button
+        android:id="@+id/stat_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_weight="1"
+        android:layout_marginTop="2dp"
+        android:text="@string/stat_sheet"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:background="#FFA500"
+        android:onClick="goToStatSheet" />
+
+</LinearLayout>

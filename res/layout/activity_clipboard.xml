@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/clipboardLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/colorbballcourt"
+        android:orientation="vertical"
+        tools:context=".ClipboardActivity" >
+
+        <android.gesture.GestureOverlayView
+            android:id="@+id/gestures"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fadeEnabled="false"
+            android:fadeOffset="5000000000"
+            android:gestureColor="#000000"
+            android:gestureStrokeType="multiple"
+            android:gestureStrokeWidth="3"
+            android:uncertainGestureColor="#000000" >
+        </android.gesture.GestureOverlayView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/colorButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/blueColor"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="setBlueInk"
+            android:text="@string/blue" />
+
+        <Button
+            android:id="@+id/redColor"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="setRedInk"
+            android:text="@string/red" />
+
+        <Button
+            android:id="@+id/greenColor"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="setGreenInk"
+            android:text="@string/green" />
+
+        <Button
+            android:id="@+id/eraser"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="eraseInk"
+            android:text="@string/eraser" />
+    </LinearLayout>
+
+</LinearLayout>
