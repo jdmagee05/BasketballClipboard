@@ -51,6 +51,15 @@ public class StatSheetActivity extends Activity {
 			//
 			NavUtils.navigateUpFromSameTask(this);
 			return true;
+			//add new StatSheet to options menu
+		case R.id.action_newSheet:
+			//newStatSheet();
+			return true;
+			//add save StatSheet to options menu
+		case R.id.action_saveSheet:
+			//save();
+			return true;
+		
 		}
 		return super.onOptionsItemSelected(item);
 	}

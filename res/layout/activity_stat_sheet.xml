@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="50dp"
     android:background="#000000"
     tools:context=".StatSheetActivity" >
 
@@ -10,6 +9,58 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F87431" >
+
+        <!-- The Team Name Row -->
+        <TableRow
+            android:id="@+id/teamNameRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF" >
+
+            <TextView
+                android:id="@+id/teamNameHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/team_name"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/teamName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="#000000" >
+            </EditText>
+        </TableRow>
+
+        <!-- The Game Date row -->
+        <TableRow
+            android:id="@+id/dateRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="5dp" >
+
+            <TextView
+                android:id="@+id/gameDateHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/game_date"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/gameDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/date_hint"
+                android:inputType="date"
+                android:textColor="#000000" >
+            </EditText>
+        </TableRow>
 
         <!-- The row that will contain all of the column headers -->
 
@@ -26,21 +77,25 @@
                 android:id="@+id/playersHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
                 android:layout_weight="1"
                 android:text="@string/player_header"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/pointsHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
+                android:layout_marginLeft="25dp"
                 android:layout_weight="1"
                 android:text="@string/points_header"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/assistsHeader"
@@ -50,7 +105,8 @@
                 android:layout_weight="1"
                 android:text="@string/assists_header"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/reboundsHeader"
@@ -60,7 +116,8 @@
                 android:layout_weight="1"
                 android:text="@string/rebs_header"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/stealsHeader"
@@ -69,7 +126,8 @@
                 android:layout_weight="1"
                 android:text="@string/steals_header"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:textStyle="bold" />
         </TableRow>
 
         <!-- Row 1 -->

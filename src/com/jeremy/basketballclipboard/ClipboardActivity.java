@@ -9,8 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
-import android.widget.RelativeLayout;
 import android.support.v4.app.NavUtils;
 
 public class ClipboardActivity extends Activity implements GestureOverlayView.OnGestureListener {

@@ -6,19 +6,13 @@
         android:showAsAction="never"
         android:title="@string/action_settings"/>
     <item
-        android:id="@+id/action_new"
+        android:id="@+id/action_newPractice"
         android:orderInCategory="200"
         android:title="@string/new_practice"/>
     <item 
-        android:id="@+id/action_saveAs"
+        android:id="@+id/action_savePractice"
+        android:icon="@drawable/content_save"
         android:orderInCategory="300"
-        android:title="@string/saveAs_practice"/>
-    <item 
-        android:id="@+id/action_save"
-        android:orderInCategory="400"
-        android:title="@string/save_practice"/>
-    <item 
-        android:id="@+id/action_open"
-        android:orderInCategory="500"
-        android:title="@string/open_practice"/>
+        android:title="@string/save_practice"
+        android:showAsAction="ifRoom"/>
 </menu>
