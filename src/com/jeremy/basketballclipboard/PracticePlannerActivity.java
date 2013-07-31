@@ -63,13 +63,14 @@ public class PracticePlannerActivity extends Activity {
 				practiceOpened = extras.getBoolean("isFileOpened");
 				fileName = extras.getString("fileName");
 			}
-			//set the title of the practice
-			String fileNameWithoutExtension;
-			fileNameWithoutExtension = fileName.substring(0, fileName.lastIndexOf('.'));
-			EditText practiceTitle = (EditText) findViewById(R.id.practiceTitle);
-			practiceTitle.setText(fileNameWithoutExtension);
+			
 			//check that a practice has actually been opened
 			if (practiceOpened == true) {
+				//set the title of the practice
+				String fileNameWithoutExtension;
+				fileNameWithoutExtension = fileName.substring(0, fileName.lastIndexOf('.'));
+				EditText practiceTitle = (EditText) findViewById(R.id.practiceTitle);
+				practiceTitle.setText(fileNameWithoutExtension);
 				// open a file stream to read from the file
 				File sdCard = Environment.getExternalStorageDirectory();
 				File directory = new File(sdCard.getAbsolutePath()
