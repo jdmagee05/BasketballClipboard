@@ -116,6 +116,7 @@ public class PracticePlannerActivity extends Activity {
 					newStartTime.setHint("Start Time");
 					newStartTime.setRawInputType(InputType.TYPE_CLASS_DATETIME);
 					newStartTime.setTypeface(null, Typeface.BOLD);
+					oldStartTime = newStartTime;
 					
 					/* create a new drill field */
 					EditText newDrill = new EditText(this);
@@ -145,7 +146,7 @@ public class PracticePlannerActivity extends Activity {
 					newDuration.setHint("Duration");
 					newDuration.setInputType(InputType.TYPE_CLASS_DATETIME);
 					newDuration.setTypeface(null, Typeface.BOLD);
-					// oldDuration = newDuration;
+					oldDuration = newDuration;
 
 					// add the text field to the table row
 					tr.addView(newStartTime);
