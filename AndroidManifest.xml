@@ -55,7 +55,20 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.jeremy.basketballclipboard.MainActivity" />
         </activity>
+        <activity
+            android:name="com.jeremy.basketballclipboard.PracticeHubActivity"
+            android:label="@string/title_activity_practice_hub"
+            android:parentActivityName="com.jeremy.basketballclipboard.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jeremy.basketballclipboard.MainActivity" />
+        </activity>
     </application>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" >
+    </uses-permission>
 
 </manifest><!--
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" >
@@ -68,5 +81,6 @@
         </activity>
     </application>
 
-</manifest>
+</manifest>
 -->
+

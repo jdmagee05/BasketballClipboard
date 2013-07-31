@@ -24,7 +24,6 @@
     <string name="drill">Drill:</string>
     <string name="drill_hint">Enter your drill here!</string>
     <string name="add_drill">+ Add Drill</string>
-    
 
     <!-- Clipboard Strings -->
     <string name="title_activity_clipboard">ClipboardActivity</string>
@@ -36,7 +35,7 @@
     <string name="eraser">Eraser</string>
     <string name="title_activity_stat_sheet">Stat Sheet</string>
     <string name="hello_world">Hello world!</string>
-    
+
     <!-- Stat Sheet Strings -->
     <string name="player_header">Player</string>
     <string name="points_header">Points</string>
@@ -49,6 +48,6 @@
     <string name="date_hint">dd/mm/yyyy</string>
     <string name="new_statSheet">New</string>
     <string name="save_statSheet">Save</string>
-    
+    <string name="title_activity_practice_hub">PracticeHubActivity</string>
 
 </resources>

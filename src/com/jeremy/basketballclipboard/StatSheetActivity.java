@@ -65,7 +65,7 @@ public class StatSheetActivity extends Activity {
 	}
 
 	private void formatNumberPickers() {
-		// points
+		// format the points number picker
 		for (int i = 1; i <= 12; i++) {
 			int pointsId = getResources().getIdentifier("pointsCell" + i, "id",
 					getPackageName());
@@ -73,7 +73,7 @@ public class StatSheetActivity extends Activity {
 			pointsPicker.setMinValue(MIN_POINTS);
 			pointsPicker.setMaxValue(MAX_POINTS);
 		}
-		// assists
+		// format the assists number picker
 		for (int i = 1; i <= 12; i++) {
 			int assistsId = getResources().getIdentifier("assistsCell" + i,
 					"id", getPackageName());
@@ -81,7 +81,7 @@ public class StatSheetActivity extends Activity {
 			assistsPicker.setMinValue(MIN_POINTS);
 			assistsPicker.setMaxValue(MAX_POINTS);
 		}
-		// rebounds
+		// format the rebounds number picker
 		for (int i = 1; i <= 12; i++) {
 			int reboundsId = getResources().getIdentifier("reboundsCell" + i,
 					"id", getPackageName());
@@ -89,7 +89,7 @@ public class StatSheetActivity extends Activity {
 			reboundsPicker.setMinValue(MIN_POINTS);
 			reboundsPicker.setMaxValue(MAX_POINTS);
 		}
-		// steals
+		// format the steals number picker
 		for (int i = 1; i <= 12; i++) {
 			int stealsId = getResources().getIdentifier("stealsCell" + i, "id",
 					getPackageName());

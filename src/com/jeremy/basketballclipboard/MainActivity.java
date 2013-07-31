@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void goToPractice(View view){
-		Intent intent = new Intent(this, PracticePlannerActivity.class);
+		Intent intent = new Intent(this, PracticeHubActivity.class);
 		startActivity(intent);
 	}
 	
