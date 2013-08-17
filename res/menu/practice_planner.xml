@@ -9,10 +9,17 @@
         android:id="@+id/action_newPractice"
         android:orderInCategory="200"
         android:title="@string/new_practice"/>
-    <item 
+    <item
+        android:id="@+id/action_deletePractice"
+        android:icon="@drawable/content_discard"
+        android:orderInCategory="300"
+        android:showAsAction="ifRoom"
+        android:title="@string/delete_practice"/>
+    <item
         android:id="@+id/action_savePractice"
         android:icon="@drawable/content_save"
-        android:orderInCategory="300"
-        android:title="@string/save_practice"
-        android:showAsAction="ifRoom"/>
+        android:orderInCategory="400"
+        android:showAsAction="ifRoom"
+        android:title="@string/save_practice"/>
+
 </menu>

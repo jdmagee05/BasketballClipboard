@@ -13,7 +13,6 @@
     <string name="practice_title_hint">Name Your Practice</string>
     <string name="practice_hint">Edit your practice here.</string>
     <string name="practice_title">Practice Planner</string>
-    <string name="new_practice">New</string>
     <string name="saveAs_practice">Save As</string>
     <string name="save_practice">Save</string>
     <string name="open_practice">Open</string>
@@ -24,19 +23,18 @@
     <string name="drill">Drill:</string>
     <string name="drill_hint">Enter your drill here!</string>
     <string name="add_drill">+ Add Drill</string>
-
+    
     <!-- Clipboard Strings -->
-    <string name="title_activity_clipboard">ClipboardActivity</string>
+    <string name="title_activity_clipboard">Clipboard</string>
     <string name="content_desc">An image of a basketball court.</string>
     <string name="new_clipboard">New</string>
     <string name="blue">Blue</string>
     <string name="red">Red</string>
     <string name="green">Green</string>
     <string name="eraser">Eraser</string>
-    <string name="title_activity_stat_sheet">Stat Sheet</string>
-    <string name="hello_world">Hello world!</string>
 
     <!-- Stat Sheet Strings -->
+    <string name="title_activity_stat_sheet">Stat Sheet</string>
     <string name="player_header">Player</string>
     <string name="points_header">Points</string>
     <string name="assists_header">Asst.</string>
@@ -48,6 +46,11 @@
     <string name="date_hint">dd/mm/yyyy</string>
     <string name="new_statSheet">New</string>
     <string name="save_statSheet">Save</string>
-    <string name="title_activity_practice_hub">PracticeHubActivity</string>
+    
+    <!-- Practice Hub Strings -->
+    <string name="delete_practice">Delete</string>
+    <string name="new_practice">New</string>
+    <string name="title_activity_practice_hub">Practice Hub</string>
+    <string name="practice_hub_header"><u>Practices</u></string>
 
 </resources>

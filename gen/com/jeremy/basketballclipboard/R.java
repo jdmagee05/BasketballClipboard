@@ -34,18 +34,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class drawable {
         public static final int basketballcourt=0x7f020000;
         public static final int colorbballcourt=0x7f020001;
-        public static final int content_new=0x7f020002;
-        public static final int content_save=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int list_divider=0x7f020005;
+        public static final int content_discard=0x7f020002;
+        public static final int content_new=0x7f020003;
+        public static final int content_save=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int list_divider=0x7f020006;
+        public static final int navigation_cancel=0x7f020007;
     }
     public static final class id {
+        public static final int action_deletePractice=0x7f090062;
         public static final int action_hubNewPractice=0x7f090060;
         public static final int action_newPractice=0x7f090061;
-        public static final int action_newSheet=0x7f090063;
+        public static final int action_newSheet=0x7f090064;
         public static final int action_new_clipboard=0x7f09005f;
-        public static final int action_savePractice=0x7f090062;
-        public static final int action_saveSheet=0x7f090064;
+        public static final int action_savePractice=0x7f090063;
+        public static final int action_saveSheet=0x7f090065;
         public static final int action_settings=0x7f09005e;
         public static final int addDrillButton=0x7f090013;
         public static final int assistsCell1=0x7f090022;
@@ -159,54 +162,57 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
-        public static final int add_drill=0x7f060013;
+        public static final int add_drill=0x7f060012;
         /**  MainActivity Strings 
          */
         public static final int app_name=0x7f060000;
-        public static final int assists_header=0x7f06001f;
-        public static final int blue=0x7f060017;
+        public static final int assists_header=0x7f06001d;
+        public static final int blue=0x7f060016;
         public static final int clipboard=0x7f060002;
-        public static final int content_desc=0x7f060015;
-        public static final int date_hint=0x7f060025;
-        public static final int drill=0x7f060011;
-        public static final int drill_hint=0x7f060012;
-        public static final int duration_hint=0x7f060010;
-        public static final int duration_text=0x7f06000f;
-        public static final int eraser=0x7f06001a;
-        public static final int game_date=0x7f060024;
-        public static final int green=0x7f060019;
-        public static final int hello_world=0x7f06001c;
-        public static final int new_clipboard=0x7f060016;
-        public static final int new_practice=0x7f060009;
-        public static final int new_statSheet=0x7f060026;
-        public static final int open_practice=0x7f06000c;
-        /**  Stat Sheet Strings 
+        public static final int content_desc=0x7f060014;
+        public static final int date_hint=0x7f060023;
+        /**  Practice Hub Strings 
          */
-        public static final int player_header=0x7f06001d;
-        public static final int player_hint=0x7f060022;
-        public static final int points_header=0x7f06001e;
+        public static final int delete_practice=0x7f060026;
+        public static final int drill=0x7f060010;
+        public static final int drill_hint=0x7f060011;
+        public static final int duration_hint=0x7f06000f;
+        public static final int duration_text=0x7f06000e;
+        public static final int eraser=0x7f060019;
+        public static final int game_date=0x7f060022;
+        public static final int green=0x7f060018;
+        public static final int new_clipboard=0x7f060015;
+        public static final int new_practice=0x7f060027;
+        public static final int new_statSheet=0x7f060024;
+        public static final int open_practice=0x7f06000b;
+        public static final int player_header=0x7f06001b;
+        public static final int player_hint=0x7f060020;
+        public static final int points_header=0x7f06001c;
         public static final int practice_hint=0x7f060007;
+        public static final int practice_hub_header=0x7f060029;
         public static final int practice_planner=0x7f060003;
         public static final int practice_title=0x7f060008;
         public static final int practice_title_hint=0x7f060006;
-        public static final int rebs_header=0x7f060020;
-        public static final int red=0x7f060018;
-        public static final int saveAs_practice=0x7f06000a;
-        public static final int save_practice=0x7f06000b;
-        public static final int save_statSheet=0x7f060027;
-        public static final int start_time_hint=0x7f06000e;
-        public static final int start_time_text=0x7f06000d;
+        public static final int rebs_header=0x7f06001e;
+        public static final int red=0x7f060017;
+        public static final int saveAs_practice=0x7f060009;
+        public static final int save_practice=0x7f06000a;
+        public static final int save_statSheet=0x7f060025;
+        public static final int start_time_hint=0x7f06000d;
+        public static final int start_time_text=0x7f06000c;
         public static final int stat_sheet=0x7f060004;
-        public static final int steals_header=0x7f060021;
-        public static final int team_name=0x7f060023;
+        public static final int steals_header=0x7f06001f;
+        public static final int team_name=0x7f060021;
         /**  Clipboard Strings 
          */
-        public static final int title_activity_clipboard=0x7f060014;
+        public static final int title_activity_clipboard=0x7f060013;
         public static final int title_activity_practice_hub=0x7f060028;
         /**  Practice Planner Strings 
          */
         public static final int title_activity_practice_planner=0x7f060005;
-        public static final int title_activity_stat_sheet=0x7f06001b;
+        /**  Stat Sheet Strings 
+         */
+        public static final int title_activity_stat_sheet=0x7f06001a;
     }
     public static final class style {
         /** 

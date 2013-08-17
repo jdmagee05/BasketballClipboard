@@ -63,7 +63,7 @@ public class PracticeHubActivity extends Activity {
 					long arg3) {
 				// start the new practice activity
 				TextView text = (TextView) arg1.findViewById(R.id.listPracticeName);
-				fileName = text.getText().toString();
+				fileName = text.getText().toString() + ".txt";
 				isFileOpened = true;
 				Intent intent = new Intent(PracticeHubActivity.this,
 						PracticePlannerActivity.class);
@@ -85,7 +85,10 @@ public class PracticeHubActivity extends Activity {
 		File[] files = new File(sdCard.getAbsolutePath()
 				+ "/BasketballAssistant/Practices").listFiles();
 		for (int i = 0; i < files.length; i++) {
-			String fileName = files[i].getName();
+			String fileNameWithExt = files[i].getName();
+			//TODO - take the .txt off the end of the file name
+			int fileNameCutOffIndex = fileNameWithExt.lastIndexOf(".");
+			String fileName = fileNameWithExt.substring(0, fileNameCutOffIndex);
 			// set up the date formatter
 			SimpleDateFormat formatter = new SimpleDateFormat("MMM/dd/yyyy");
 			// get the date the file was last modified
@@ -130,6 +133,9 @@ public class PracticeHubActivity extends Activity {
 			//
 			NavUtils.navigateUpFromSameTask(this);
 			return true;
+		case R.id.action_deletePractice:
+			deletePractice();
+			return true;
 		case R.id.action_hubNewPractice:
 			newPractice();
 			return true;
@@ -140,5 +146,9 @@ public class PracticeHubActivity extends Activity {
 	public void newPractice() {
 		Intent intent = new Intent(this, PracticePlannerActivity.class);
 		startActivity(intent);
+	}
+	
+	public void deletePractice(){
+		//TODO fill in code to delete a practice
 	}
 }

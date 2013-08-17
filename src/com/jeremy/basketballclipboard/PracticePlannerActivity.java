@@ -19,6 +19,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 public class PracticePlannerActivity extends Activity {
 	EditText oldStartTime;
@@ -47,6 +49,8 @@ public class PracticePlannerActivity extends Activity {
 	boolean practiceOpened = false;
 	String fileName;
 	int numRows;
+	
+	File sdCard = Environment.getExternalStorageDirectory();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +76,6 @@ public class PracticePlannerActivity extends Activity {
 				EditText practiceTitle = (EditText) findViewById(R.id.practiceTitle);
 				practiceTitle.setText(fileNameWithoutExtension);
 				// open a file stream to read from the file
-				File sdCard = Environment.getExternalStorageDirectory();
 				File directory = new File(sdCard.getAbsolutePath()
 						+ "/BasketballAssistant/Practices/"+fileName);
 				BufferedReader br = new BufferedReader(new FileReader(directory));
@@ -82,9 +85,6 @@ public class PracticePlannerActivity extends Activity {
 				strLine = br.readLine();
 				numRows = Integer.parseInt(strLine);
 				for (int i = 0; i < numRows; i++) {
-					// TODO - code to generate a practice
-					// - generate a row and then its EditText fields and fill
-					// them in one by one.
 					// gets the table layout
 					TableLayout tl = (TableLayout) findViewById(R.id.tableLayout);
 					// assign values to margins of table row
@@ -223,6 +223,14 @@ public class PracticePlannerActivity extends Activity {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		case R.id.action_deletePractice:
+			EditText practiceTitle = (EditText) findViewById(R.id.practiceTitle);
+			String fileName = practiceTitle.getText().toString() + ".txt";
+			File file = new File(sdCard.getAbsolutePath()
+					+ "/BasketballAssistant/Practices/"+fileName);
+			file.delete();
+			Intent intent = new Intent(PracticePlannerActivity.this, PracticeHubActivity.class);
+			startActivity(intent);
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
@@ -298,8 +306,8 @@ public class PracticePlannerActivity extends Activity {
 				// create an alert dialog box
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setMessage(
-						"Enter only numbers in the Drill Duration field."
-								+ " Thanks!").setTitle("Warning!");
+						"Enter only numbers in the Drill Duration field.")
+						.setTitle("Warning!");
 				builder.setPositiveButton("OK",
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog,
