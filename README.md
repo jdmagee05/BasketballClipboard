@@ -23,4 +23,6 @@ This is a tool for allowing coaches to plan there practices.
 
 ### Statistics Sheet
 Keep track of each individual players' statistics throughout the game.
- 
+
+_Contact_
+E-mail: jdmagee93@gmail.com
