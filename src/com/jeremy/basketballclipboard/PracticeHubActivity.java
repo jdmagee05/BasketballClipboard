@@ -30,9 +30,6 @@ public class PracticeHubActivity extends Activity {
 	public String fileName;
 	public boolean isFileOpened = false;
 
-	// List<Map<String, String>> data = new LinkedList<Map<String, String>>();
-	// Map<String, String> map = new HashMap<String, String>();
-
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -61,10 +58,11 @@ public class PracticeHubActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
-				// start the new practice activity
+				// get the name of the file of the practice that was just clicked
 				TextView text = (TextView) arg1.findViewById(R.id.listPracticeName);
 				fileName = text.getText().toString() + ".txt";
 				isFileOpened = true;
+				//start the new practice activity
 				Intent intent = new Intent(PracticeHubActivity.this,
 						PracticePlannerActivity.class);
 				intent.putExtra("isFileOpened", isFileOpened);
@@ -86,7 +84,6 @@ public class PracticeHubActivity extends Activity {
 				+ "/BasketballAssistant/Practices").listFiles();
 		for (int i = 0; i < files.length; i++) {
 			String fileNameWithExt = files[i].getName();
-			//TODO - take the .txt off the end of the file name
 			int fileNameCutOffIndex = fileNameWithExt.lastIndexOf(".");
 			String fileName = fileNameWithExt.substring(0, fileNameCutOffIndex);
 			// set up the date formatter

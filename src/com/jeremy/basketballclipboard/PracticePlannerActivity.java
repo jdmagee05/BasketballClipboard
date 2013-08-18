@@ -213,7 +213,6 @@ public class PracticePlannerActivity extends Activity {
 		case R.id.action_newPractice:
 			// newPractice();
 			return true;
-			// add save practice to options menu
 		case R.id.action_savePractice:
 			try {
 				save();
@@ -221,6 +220,7 @@ public class PracticePlannerActivity extends Activity {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			return true;
 		case R.id.action_deletePractice:
 			deletePractice();
 			return true;
@@ -475,13 +475,14 @@ public class PracticePlannerActivity extends Activity {
 		}
 	}
 	
-	public void deletePractice(){
+	public boolean deletePractice(){
 		EditText practiceTitle = (EditText) findViewById(R.id.practiceTitle);
 		String fileName = practiceTitle.getText().toString() + ".txt";
 		File file = new File(sdCard.getAbsolutePath()
 				+ "/BasketballAssistant/Practices/"+fileName);
-		file.delete();
+		boolean deleted = file.delete();
 		Intent intent = new Intent(PracticePlannerActivity.this, PracticeHubActivity.class);
 		startActivity(intent);
+		return deleted;
 	}
 }
