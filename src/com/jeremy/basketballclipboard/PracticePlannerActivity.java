@@ -32,7 +32,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
-import android.widget.TextView;
 
 public class PracticePlannerActivity extends Activity {
 	EditText oldStartTime;
@@ -45,7 +44,7 @@ public class PracticePlannerActivity extends Activity {
 	int numTableRows = 0;
 	List<TableRow> tableRows = new ArrayList<TableRow>();
 	FileInputStream fis;
-	// variable needed for opening up saved practices
+	// variables needed for opening up saved practices
 	boolean practiceOpened = false;
 	String fileName;
 	int numRows;
@@ -68,20 +67,19 @@ public class PracticePlannerActivity extends Activity {
 				fileName = extras.getString("fileName");
 			}
 			
-			//check that a practice has actually been opened
+			//check that a practice has actually been opened from the PracticeHub
 			if (practiceOpened == true) {
 				//set the title of the practice
 				String fileNameWithoutExtension;
 				fileNameWithoutExtension = fileName.substring(0, fileName.lastIndexOf('.'));
 				EditText practiceTitle = (EditText) findViewById(R.id.practiceTitle);
 				practiceTitle.setText(fileNameWithoutExtension);
-				// open a file stream to read from the file
+				// open a file stream to read from the text file which has the contents of the practice
 				File directory = new File(sdCard.getAbsolutePath()
 						+ "/BasketballAssistant/Practices/"+fileName);
 				BufferedReader br = new BufferedReader(new FileReader(directory));
 				String strLine = null;
-				//read the first line of the file to know how many rows to 
-				//generate
+				//read the first line of the file to know how many rows to generate
 				strLine = br.readLine();
 				numRows = Integer.parseInt(strLine);
 				for (int i = 0; i < numRows; i++) {
@@ -224,13 +222,7 @@ public class PracticePlannerActivity extends Activity {
 				e.printStackTrace();
 			}
 		case R.id.action_deletePractice:
-			EditText practiceTitle = (EditText) findViewById(R.id.practiceTitle);
-			String fileName = practiceTitle.getText().toString() + ".txt";
-			File file = new File(sdCard.getAbsolutePath()
-					+ "/BasketballAssistant/Practices/"+fileName);
-			file.delete();
-			Intent intent = new Intent(PracticePlannerActivity.this, PracticeHubActivity.class);
-			startActivity(intent);
+			deletePractice();
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
@@ -481,5 +473,15 @@ public class PracticePlannerActivity extends Activity {
 			osw.flush();
 			osw.close();
 		}
+	}
+	
+	public void deletePractice(){
+		EditText practiceTitle = (EditText) findViewById(R.id.practiceTitle);
+		String fileName = practiceTitle.getText().toString() + ".txt";
+		File file = new File(sdCard.getAbsolutePath()
+				+ "/BasketballAssistant/Practices/"+fileName);
+		file.delete();
+		Intent intent = new Intent(PracticePlannerActivity.this, PracticeHubActivity.class);
+		startActivity(intent);
 	}
 }
