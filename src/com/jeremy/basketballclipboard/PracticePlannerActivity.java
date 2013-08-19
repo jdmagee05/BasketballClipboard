@@ -42,13 +42,14 @@ public class PracticePlannerActivity extends Activity {
 								// 2 if drill duration entered incorrectly
 	boolean correctDurationEntry = true;
 	int numTableRows = 0;
+	boolean firstPass = true;
 	List<TableRow> tableRows = new ArrayList<TableRow>();
 	FileInputStream fis;
 	// variables needed for opening up saved practices
 	boolean practiceOpened = false;
 	String fileName;
 	int numRows;
-	
+
 	File sdCard = Environment.getExternalStorageDirectory();
 
 	@Override
@@ -58,28 +59,33 @@ public class PracticePlannerActivity extends Activity {
 			setContentView(R.layout.activity_practice_planner);
 			// Show the Up button in the action bar.
 			setupActionBar();
-			
-			/*******Generate the practice opened by the user*******/
-			//get the data sent from the PracticeHubActivity
+
+			/******* Generate the practice opened by the user *******/
+			// get the data sent from the PracticeHubActivity
 			Bundle extras = getIntent().getExtras();
 			if (extras != null) {
 				practiceOpened = extras.getBoolean("isFileOpened");
 				fileName = extras.getString("fileName");
 			}
-			
-			//check that a practice has actually been opened from the PracticeHub
+
+			// check that a practice has actually been opened from the
+			// PracticeHub
 			if (practiceOpened == true) {
-				//set the title of the practice
+				// set the title of the practice
 				String fileNameWithoutExtension;
-				fileNameWithoutExtension = fileName.substring(0, fileName.lastIndexOf('.'));
+				fileNameWithoutExtension = fileName.substring(0,
+						fileName.lastIndexOf('.'));
 				EditText practiceTitle = (EditText) findViewById(R.id.practiceTitle);
 				practiceTitle.setText(fileNameWithoutExtension);
-				// open a file stream to read from the text file which has the contents of the practice
+				// open a file stream to read from the text file which has the
+				// contents of the practice
 				File directory = new File(sdCard.getAbsolutePath()
-						+ "/BasketballAssistant/Practices/"+fileName);
-				BufferedReader br = new BufferedReader(new FileReader(directory));
+						+ "/BasketballAssistant/Practices/" + fileName);
+				BufferedReader br = new BufferedReader(
+						new FileReader(directory));
 				String strLine = null;
-				//read the first line of the file to know how many rows to generate
+				// read the first line of the file to know how many rows to
+				// generate
 				strLine = br.readLine();
 				numRows = Integer.parseInt(strLine);
 				for (int i = 0; i < numRows; i++) {
@@ -91,7 +97,7 @@ public class PracticePlannerActivity extends Activity {
 					left = right = bottom = 0; // set top, right and bottom to 0
 					// creates a new row to be added to the TableView
 					TableRow tr = new TableRow(this);
-					numTableRows++;
+					numTableRows++; // increment the number of table rows
 					tableRows.add(tr);
 					// set the table row layout params
 					TableLayout.LayoutParams trParams = new TableLayout.LayoutParams(
@@ -99,14 +105,15 @@ public class PracticePlannerActivity extends Activity {
 							TableLayout.LayoutParams.WRAP_CONTENT);
 					trParams.setMargins(left, top, right, bottom);
 					tr.setLayoutParams(trParams);
-					
+
 					/* create a new start time field */
 					EditText newStartTime = new EditText(this);
 					// set the start time field layout params
 					TableRow.LayoutParams startTimeParams = new TableRow.LayoutParams(
 							TableRow.LayoutParams.WRAP_CONTENT,
 							TableRow.LayoutParams.WRAP_CONTENT, 1);
-					startTimeParams.setMargins(5, 5, 0, 0); // left, top, right, bottom
+					startTimeParams.setMargins(5, 5, 0, 0); // left, top, right,
+															// bottom
 					tr.setBackgroundColor(Color.parseColor("#FFFFFF"));
 					newStartTime.setLayoutParams(startTimeParams);
 					// set attributes
@@ -116,14 +123,15 @@ public class PracticePlannerActivity extends Activity {
 					newStartTime.setRawInputType(InputType.TYPE_CLASS_DATETIME);
 					newStartTime.setTypeface(null, Typeface.BOLD);
 					oldStartTime = newStartTime;
-					
+
 					/* create a new drill field */
 					EditText newDrill = new EditText(this);
 					// set the drill field layout params
 					TableRow.LayoutParams drillParams = new TableRow.LayoutParams(
 							TableRow.LayoutParams.WRAP_CONTENT,
 							TableRow.LayoutParams.WRAP_CONTENT, 1);
-					drillParams.setMargins(10, 5, 0, 0); // left, top, right, bottom
+					drillParams.setMargins(10, 5, 0, 0); // left, top, right,
+															// bottom
 					newDrill.setLayoutParams(drillParams);
 					// set attributes
 					newDrill.setEms(10);
@@ -137,7 +145,8 @@ public class PracticePlannerActivity extends Activity {
 					TableRow.LayoutParams durationParams = new TableRow.LayoutParams(
 							TableRow.LayoutParams.WRAP_CONTENT,
 							TableRow.LayoutParams.WRAP_CONTENT, 1);
-					durationParams.setMargins(10, 5, 5, 0); // left, top, right, bottom
+					durationParams.setMargins(10, 5, 5, 0); // left, top, right,
+															// bottom
 					newDuration.setLayoutParams(durationParams);
 					// set attributes
 					newDuration.setEms(10);
@@ -151,22 +160,22 @@ public class PracticePlannerActivity extends Activity {
 					tr.addView(newStartTime);
 					tr.addView(newDrill);
 					tr.addView(newDuration);
-					
-					//add the table row to the table layout
+
+					// add the table row to the table layout
 					tl.addView(tr);
-					
-					//add the text to the EditText fields
+
+					// add the text to the EditText fields
 					strLine = br.readLine();
 					int index = strLine.indexOf("$");
 					String startTime = strLine.substring(0, index);
-					strLine = strLine.substring(index+1);
+					strLine = strLine.substring(index + 1);
 					index = strLine.indexOf("$");
 					String drill = strLine.substring(0, index);
-					strLine = strLine.substring(index+1);
+					strLine = strLine.substring(index + 1);
 					index = strLine.indexOf("$");
 					String duration = strLine.substring(0, index);
-					
-					//set the text of each EditText
+
+					// set the text of each EditText
 					newStartTime.setText(startTime);
 					newDrill.setText(drill);
 					newDuration.setText(duration);
@@ -262,7 +271,7 @@ public class PracticePlannerActivity extends Activity {
 		// creates a new row to be added to the TableView
 		TableRow tr = new TableRow(this);
 		numTableRows++;
-		tableRows.add(tr);
+		// tableRows.add(tr);
 		// set the table row layout params
 		TableLayout.LayoutParams trParams = new TableLayout.LayoutParams(
 				TableLayout.LayoutParams.WRAP_CONTENT,
@@ -359,9 +368,16 @@ public class PracticePlannerActivity extends Activity {
 					oldStartTime.setText(strOldStartTime);
 				}
 				properFormEntry = 1;
+				oldStartTime = newStartTime;
+
 			}
+			firstPass = false;
 		}
-		oldStartTime = newStartTime;
+		// if the first drill has just been added set the oldStartTime to the
+		// newStartTime
+		if (firstPass == true) {
+			oldStartTime = newStartTime;
+		}
 
 		/* create a new drill field */
 		EditText newDrill = new EditText(this);
@@ -391,26 +407,39 @@ public class PracticePlannerActivity extends Activity {
 		newDuration.setHint("Duration");
 		newDuration.setInputType(InputType.TYPE_CLASS_DATETIME);
 		newDuration.setTypeface(null, Typeface.BOLD);
-		// oldDuration = newDuration;
 
-		// add the text field to the table row
+		// add the text fields to the table row
 		tr.addView(newStartTime);
 		tr.addView(newDrill);
 		tr.addView(newDuration);
 		// add the table row to the table layout
 		tl.addView(tr);
 
+		// remove the table row that would have been added if the duration was
+		// entered correctly.
+		// this is done so that there are no excess table rows with no entries.
+		if (correctDurationEntry == false) {
+			numTableRows--;
+			tl.removeView(tr);
+		}
+		// add the table row to the list of table rows if the fields have been
+		// entered correctly
+		if (correctDurationEntry == true) {
+			tableRows.add(tr);
+		}
+
 		// set focus on the newly created start time field
 		if (properFormEntry == 0 || strOldDuration.length() == 0) {
 			newStartTime.requestFocus();
 			properFormEntry++;
+			oldDuration = newDuration;
 		} else if (properFormEntry == 1) {
 			newDrill.requestFocus();
+			oldDuration = newDuration;
 		} else if (properFormEntry == 2) {
 			oldDuration.requestFocus();
+			correctDurationEntry = true;
 		}
-		oldDuration = newDuration;
-		correctDurationEntry = true;
 	}
 
 	public void save() throws IOException {
@@ -474,14 +503,15 @@ public class PracticePlannerActivity extends Activity {
 			osw.close();
 		}
 	}
-	
-	public boolean deletePractice(){
+
+	public boolean deletePractice() {
 		EditText practiceTitle = (EditText) findViewById(R.id.practiceTitle);
 		String fileName = practiceTitle.getText().toString() + ".txt";
 		File file = new File(sdCard.getAbsolutePath()
-				+ "/BasketballAssistant/Practices/"+fileName);
+				+ "/BasketballAssistant/Practices/" + fileName);
 		boolean deleted = file.delete();
-		Intent intent = new Intent(PracticePlannerActivity.this, PracticeHubActivity.class);
+		Intent intent = new Intent(PracticePlannerActivity.this,
+				PracticeHubActivity.class);
 		startActivity(intent);
 		return deleted;
 	}
