@@ -41,7 +41,8 @@
     <string name="rebs_header">Rebs.</string>
     <string name="steals_header">Steals</string>
     <string name="player_hint">Player Name</string>
-    <string name="team_name">Team Name:</string>
+    <string name="game_name">Game Name:</string>
+    <string name="game_name_hint">A specific name for this game</string>
     <string name="game_date">Date:</string>
     <string name="date_hint">dd/mm/yyyy</string>
     <string name="new_statSheet">New</string>

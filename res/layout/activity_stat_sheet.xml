@@ -12,24 +12,25 @@
 
         <!-- The Team Name Row -->
         <TableRow
-            android:id="@+id/teamNameRow"
+            android:id="@+id/statSheetNameRow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#FFFFFF" >
 
             <TextView
-                android:id="@+id/teamNameHeader"
+                android:id="@+id/statSheetNameHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/team_name"
+                android:text="@string/game_name"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/teamName"
+                android:id="@+id/gameName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:hint="@string/game_name_hint"
                 android:inputType="text"
                 android:textColor="#000000" >
             </EditText>
@@ -133,6 +134,7 @@
         <!-- Row 1 -->
 
         <TableRow
+            android:id="@+id/statsRow1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -178,6 +180,7 @@
         <!-- Row 2 -->
 
         <TableRow
+            android:id="@+id/statsRow2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -223,6 +226,7 @@
         <!-- Row 3 -->
 
         <TableRow
+            android:id="@+id/statsRow3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -268,6 +272,7 @@
         <!-- Row 4 -->
 
         <TableRow
+            android:id="@+id/statsRow4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -313,6 +318,7 @@
         <!-- Row 5 -->
 
         <TableRow
+            android:id="@+id/statsRow5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -358,6 +364,7 @@
         <!-- Row 6 -->
 
         <TableRow
+            android:id="@+id/statsRow6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -403,6 +410,7 @@
         <!-- Row 7 -->
 
         <TableRow
+            android:id="@+id/statsRow7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -448,6 +456,7 @@
         <!-- Row 8 -->
 
         <TableRow
+            android:id="@+id/statsRow8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -493,6 +502,7 @@
         <!-- Row 9 -->
 
         <TableRow
+            android:id="@+id/statsRow9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -538,6 +548,7 @@
         <!-- Row 10 -->
 
         <TableRow
+            android:id="@+id/statsRow10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -583,6 +594,7 @@
         <!-- Row 11 -->
 
         <TableRow
+            android:id="@+id/statsRow11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -628,6 +640,7 @@
         <!-- Row 12 -->
 
         <TableRow
+            android:id="@+id/statsRow12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"

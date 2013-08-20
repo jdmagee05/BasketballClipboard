@@ -271,7 +271,6 @@ public class PracticePlannerActivity extends Activity {
 		// creates a new row to be added to the TableView
 		TableRow tr = new TableRow(this);
 		numTableRows++;
-		// tableRows.add(tr);
 		// set the table row layout params
 		TableLayout.LayoutParams trParams = new TableLayout.LayoutParams(
 				TableLayout.LayoutParams.WRAP_CONTENT,
@@ -480,8 +479,8 @@ public class PracticePlannerActivity extends Activity {
 			if (!file.exists()) {
 				file.createNewFile();
 			}
-			// write the number of TableRows so that we will know how many to
-			// generate
+			// write the number of TableRows so that it will know how many to
+			// generate when the practice is loaded
 			osw.write(numTableRows + "\n");
 			for (int i = 0; i < tableRows.size(); i++) {
 				TableRow tableRow = tableRows.get(i);

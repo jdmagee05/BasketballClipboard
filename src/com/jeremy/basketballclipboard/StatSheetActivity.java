@@ -1,10 +1,18 @@
 package com.jeremy.basketballclipboard;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+
 import android.os.Bundle;
+import android.os.Environment;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.NumberPicker;
+import android.widget.TableRow;
 import android.support.v4.app.NavUtils;
 
 public class StatSheetActivity extends Activity {
@@ -18,7 +26,7 @@ public class StatSheetActivity extends Activity {
 		setContentView(R.layout.activity_stat_sheet);
 		// Show the Up button in the action bar.
 		setupActionBar();
-		//format the NumberPickers
+		// format the NumberPickers
 		formatNumberPickers();
 	}
 
@@ -51,15 +59,20 @@ public class StatSheetActivity extends Activity {
 			//
 			NavUtils.navigateUpFromSameTask(this);
 			return true;
-			//add new StatSheet to options menu
+			// add new StatSheet to options menu
 		case R.id.action_newSheet:
-			//newStatSheet();
+			// newStatSheet();
 			return true;
-			//add save StatSheet to options menu
+			// add save StatSheet to options menu
 		case R.id.action_saveSheet:
-			//save();
+			try {
+				saveStatSheet();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			return true;
-		
+
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -98,4 +111,71 @@ public class StatSheetActivity extends Activity {
 			stealsPicker.setMaxValue(MAX_POINTS);
 		}
 	}
+
+	public void saveStatSheet() throws IOException {
+		boolean mExternalStorageAvailable = false;
+		boolean mExternalStorageWriteable = false;
+		String state = Environment.getExternalStorageState();
+
+		if (Environment.MEDIA_MOUNTED.equals(state)) {
+			// We can read and write the media
+			mExternalStorageAvailable = mExternalStorageWriteable = true;
+		} else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+			// We can only read the media
+			mExternalStorageAvailable = true;
+			mExternalStorageWriteable = false;
+		} else {
+			// Something else is wrong. It may be one of many other states, but
+			// all we need
+			// to know is we can neither read nor write
+			mExternalStorageAvailable = mExternalStorageWriteable = false;
+		}
+
+		if (mExternalStorageAvailable == true
+				&& mExternalStorageWriteable == true) {
+			EditText gameNameBox = (EditText) findViewById(R.id.gameName);
+			// This will get the SD Card directory and create a folder named
+			// BasketballAssistant in it.
+			File sdCard = Environment.getExternalStorageDirectory();
+			File directory = new File(sdCard.getAbsolutePath()
+					+ "/BasketballAssistant/StatSheets");
+			directory.mkdirs();
+			// Now create the file in the above directory and write the contents
+			// into it
+			File file = new File(directory, gameNameBox.getText().toString()
+					+ ".txt");
+			FileOutputStream fos = new FileOutputStream(file);
+			OutputStreamWriter osw = new OutputStreamWriter(fos);
+			// String fileName = file.getName();
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+			for(int i = 1; i <= 12; i++){
+				int rowsId = getResources().getIdentifier("statsRow" + i, "id",
+						getPackageName());
+				TableRow statsRows = (TableRow) findViewById(rowsId);
+				EditText playerCell = (EditText) statsRows.getChildAt(0);
+				NumberPicker pointsCell = (NumberPicker) statsRows.getChildAt(1);
+				NumberPicker assistsCell = (NumberPicker) statsRows.getChildAt(2);
+				NumberPicker rebsCell = (NumberPicker) statsRows.getChildAt(3);
+				NumberPicker stealsCell = (NumberPicker) statsRows.getChildAt(4);
+				//get the text from each view
+				String sPlayer = playerCell.getText().toString();
+				String sPoints = String.valueOf(pointsCell.getValue());
+				String sAssists = String.valueOf(assistsCell.getValue());
+				String sRebs = String.valueOf(rebsCell.getValue());
+				String sSteals = String.valueOf(stealsCell.getValue());
+				//write the information taken from the StatSheet to the new file created.
+				osw.write(sPlayer + "$");
+				osw.write(sPoints + "$");
+				osw.write(sAssists + "$");
+				osw.write(sRebs + "$");
+				osw.write(sSteals + "$\n");
+			}
+			osw.flush();
+			osw.close();
+		}
+
+	}
+
 }
