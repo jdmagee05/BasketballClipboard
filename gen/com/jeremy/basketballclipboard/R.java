@@ -33,20 +33,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class drawable {
         public static final int basketballcourt=0x7f020000;
-        public static final int colorbballcourt=0x7f020001;
-        public static final int content_discard=0x7f020002;
-        public static final int content_new=0x7f020003;
-        public static final int content_save=0x7f020004;
-        public static final int ic_launcher=0x7f020005;
-        public static final int list_divider=0x7f020006;
-        public static final int navigation_cancel=0x7f020007;
+        public static final int collections_collection=0x7f020001;
+        public static final int colorbballcourt=0x7f020002;
+        public static final int content_discard=0x7f020003;
+        public static final int content_new=0x7f020004;
+        public static final int content_save=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int list_divider=0x7f020007;
+        public static final int navigation_cancel=0x7f020008;
     }
     public static final class id {
         public static final int action_deletePractice=0x7f09006e;
         public static final int action_hubNewPractice=0x7f09006c;
         public static final int action_newPractice=0x7f09006d;
-        public static final int action_newSheet=0x7f090070;
         public static final int action_new_clipboard=0x7f09006b;
+        public static final int action_openStatSheet=0x7f090070;
         public static final int action_savePractice=0x7f09006f;
         public static final int action_saveSheet=0x7f090071;
         public static final int action_settings=0x7f09006a;
@@ -197,8 +198,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int green=0x7f060018;
         public static final int new_clipboard=0x7f060015;
         public static final int new_practice=0x7f060028;
-        public static final int new_statSheet=0x7f060025;
         public static final int open_practice=0x7f06000b;
+        public static final int open_statSheet=0x7f060025;
         public static final int player_header=0x7f06001b;
         public static final int player_hint=0x7f060020;
         public static final int points_header=0x7f06001c;
