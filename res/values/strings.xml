@@ -23,7 +23,7 @@
     <string name="drill">Drill:</string>
     <string name="drill_hint">Enter your drill here!</string>
     <string name="add_drill">+ Add Drill</string>
-    
+
     <!-- Clipboard Strings -->
     <string name="title_activity_clipboard">Clipboard</string>
     <string name="content_desc">An image of a basketball court.</string>
@@ -47,11 +47,15 @@
     <string name="date_hint">dd/mm/yyyy</string>
     <string name="open_statSheet">Open Stat Sheet</string>
     <string name="save_statSheet">Save</string>
-    
+
     <!-- Practice Hub Strings -->
     <string name="delete_practice">Delete</string>
     <string name="new_practice">New</string>
     <string name="title_activity_practice_hub">Practice Hub</string>
     <string name="practice_hub_header"><u>Practices</u></string>
-
+    <string name="title_activity_open_stat_sheet">OpenStatSheetActivity</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <!-- Stat Sheet Hub Strings -->
+    <string name="open_stat_sheet_header">Stat Sheets</string>
 </resources>

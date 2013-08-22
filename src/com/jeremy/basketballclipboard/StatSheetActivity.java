@@ -8,6 +8,7 @@ import java.io.OutputStreamWriter;
 import android.os.Bundle;
 import android.os.Environment;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -61,9 +62,8 @@ public class StatSheetActivity extends Activity {
 			return true;
 			// add new StatSheet to options menu
 		case R.id.action_openStatSheet:
-			// newStatSheet();
+			goToStatSheetOpener();
 			return true;
-			// add save StatSheet to options menu
 		case R.id.action_saveSheet:
 			try {
 				saveStatSheet();
@@ -176,6 +176,11 @@ public class StatSheetActivity extends Activity {
 			osw.close();
 		}
 
+	}
+	
+	public void goToStatSheetOpener(){
+		Intent intent = new Intent(this, OpenStatSheetActivity.class);
+		startActivity(intent);
 	}
 
 }

@@ -63,6 +63,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.jeremy.basketballclipboard.MainActivity" />
         </activity>
+        <activity
+            android:name="com.jeremy.basketballclipboard.OpenStatSheetActivity"
+            android:label="@string/title_activity_open_stat_sheet"
+            android:parentActivityName="com.jeremy.basketballclipboard.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jeremy.basketballclipboard.MainActivity" />
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
@@ -81,6 +89,7 @@
         </activity>
     </application>
 
-</manifest>
+</manifest>
 -->
+
 
