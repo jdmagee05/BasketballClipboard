@@ -13,11 +13,15 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 
 public class OpenStatSheetActivity extends Activity {
@@ -48,6 +52,25 @@ public class OpenStatSheetActivity extends Activity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// get the name of the file of the practice that was just clicked
+				TextView text = (TextView) arg1.findViewById(R.id.listStatSheetName);
+				fileName = text.getText().toString() + ".txt";
+				isFileOpened = true;
+				//start the new practice activity
+				Intent intent = new Intent(OpenStatSheetActivity.this,
+						StatSheetActivity.class);
+				intent.putExtra("isFileOpened", isFileOpened);
+				intent.putExtra("fileName", fileName);
+				startActivity(intent);
+			}
+
+		});
 	}
 
 	@SuppressLint("SimpleDateFormat")
