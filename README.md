@@ -24,5 +24,9 @@ This is a tool for allowing coaches to plan there practices.
 ### Statistics Sheet
 Keep track of each individual players' statistics throughout the game.
 
+- Save a statistics sheet.
+- Load a specific statistics sheet from the Statistics Sheet Hub.
+- Create a new statistics sheet for a new game from the Statistics Sheet Hub.
+ 
 _Contact_
 E-mail: jdmagee93@gmail.com
