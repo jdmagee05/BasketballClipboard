@@ -138,7 +138,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:weightSum="5"
+            android:weightSum="6"
             android:background="#FFFFFF" >
 
             <EditText
@@ -146,7 +146,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:hint="@string/player_hint"
                 android:textColor="#000000" />
 
@@ -175,7 +175,8 @@
                 android:id="@+id/stealsCell1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:layout_marginRight="5dp" />
         </TableRow>
 
         <!-- Row 2 -->
@@ -185,7 +186,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:weightSum="5"
+            android:weightSum="6"
             android:background="#FFFFFF" >
 
             <EditText
@@ -193,7 +194,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:hint="@string/player_hint"
                 android:textColor="#000000" />
 
@@ -232,7 +233,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:weightSum="5"
+            android:weightSum="6"
             android:background="#FFFFFF" >
 
             <EditText
@@ -240,7 +241,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:hint="@string/player_hint"
                 android:textColor="#000000" />
 
@@ -279,7 +280,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:weightSum="5"
+            android:weightSum="6"
             android:background="#FFFFFF" >
 
             <EditText
@@ -287,7 +288,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:hint="@string/player_hint"
                 android:textColor="#000000" />
 
@@ -326,7 +327,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:weightSum="5"
+            android:weightSum="6"
             android:background="#FFFFFF" >
 
             <EditText
@@ -334,7 +335,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:hint="@string/player_hint"
                 android:textColor="#000000" />
 
@@ -373,7 +374,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:weightSum="5"
+            android:weightSum="6"
             android:background="#FFFFFF" >
 
             <EditText
@@ -381,7 +382,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:hint="@string/player_hint"
                 android:textColor="#000000" />
 
@@ -420,7 +421,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:weightSum="5"
+            android:weightSum="6"
             android:background="#FFFFFF" >
 
             <EditText
@@ -428,7 +429,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:hint="@string/player_hint"
                 android:textColor="#000000" />
 
@@ -467,7 +468,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:weightSum="5"
+            android:weightSum="6"
             android:background="#FFFFFF" >
 
             <EditText
@@ -475,7 +476,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:hint="@string/player_hint"
                 android:textColor="#000000" />
 
@@ -514,7 +515,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:weightSum="5"
+            android:weightSum="6"
             android:background="#FFFFFF" >
 
             <EditText
@@ -522,7 +523,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:hint="@string/player_hint"
                 android:textColor="#000000" />
 
@@ -561,7 +562,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:weightSum="5"
+            android:weightSum="6"
             android:background="#FFFFFF" >
 
             <EditText
@@ -569,7 +570,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:hint="@string/player_hint"
                 android:textColor="#000000" />
 
@@ -608,7 +609,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:weightSum="5"
+            android:weightSum="6"
             android:background="#FFFFFF" >
 
             <EditText
@@ -616,7 +617,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:hint="@string/player_hint"
                 android:textColor="#000000" />
 
@@ -655,7 +656,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:weightSum="5"
+            android:weightSum="6"
             android:background="#FFFFFF" >
 
             <EditText
@@ -663,7 +664,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:hint="@string/player_hint"
                 android:textColor="#000000" />
 

@@ -202,14 +202,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int game_name=0x7f060021;
         public static final int game_name_hint=0x7f060022;
         public static final int green=0x7f060018;
-        public static final int hello_world=0x7f06002c;
+        public static final int hello_world=0x7f06002b;
         public static final int new_clipboard=0x7f060015;
         public static final int new_practice=0x7f060028;
         public static final int new_stat_sheet=0x7f06002e;
         public static final int open_practice=0x7f06000b;
         public static final int open_statSheet=0x7f060025;
-        /**  Stat Sheet Hub Strings 
-         */
         public static final int open_stat_sheet_header=0x7f06002d;
         public static final int player_header=0x7f06001b;
         public static final int player_hint=0x7f060020;
@@ -231,7 +229,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /**  Clipboard Strings 
          */
         public static final int title_activity_clipboard=0x7f060013;
-        public static final int title_activity_open_stat_sheet=0x7f06002b;
+        /**  Stat Sheet Hub Strings 
+         */
+        public static final int title_activity_open_stat_sheet=0x7f06002c;
         public static final int title_activity_practice_hub=0x7f060029;
         /**  Practice Planner Strings 
          */

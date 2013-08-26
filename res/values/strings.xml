@@ -16,11 +16,11 @@
     <string name="saveAs_practice">Save As</string>
     <string name="save_practice">Save</string>
     <string name="open_practice">Open</string>
-    <string name="start_time_text">Time:</string>
+    <string name="start_time_text"><u>Time:</u></string>
     <string name="start_time_hint">Start Time</string>
-    <string name="duration_text">Duration (minutes):</string>
+    <string name="duration_text"><u>Duration (minutes):</u></string>
     <string name="duration_hint">Duration</string>
-    <string name="drill">Drill:</string>
+    <string name="drill"><u>Drill:</u></string>
     <string name="drill_hint">Enter your drill here!</string>
     <string name="add_drill">+ Add Drill</string>
 
@@ -53,10 +53,11 @@
     <string name="new_practice">New</string>
     <string name="title_activity_practice_hub">Practice Hub</string>
     <string name="practice_hub_header"><u>Practices</u></string>
-    <string name="title_activity_open_stat_sheet">OpenStatSheetActivity</string>
+    
     <string name="hello_world">Hello world!</string>
     
     <!-- Stat Sheet Hub Strings -->
+    <string name="title_activity_open_stat_sheet">Open a Stat Sheet</string>
     <string name="open_stat_sheet_header">Stat Sheets</string>
     <string name="new_stat_sheet">New</string>
 </resources>

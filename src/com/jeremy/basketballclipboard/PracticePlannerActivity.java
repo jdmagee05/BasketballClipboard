@@ -92,7 +92,7 @@ public class PracticePlannerActivity extends Activity {
 					// gets the table layout
 					TableLayout tl = (TableLayout) findViewById(R.id.tableLayout);
 					// assign values to margins of table row
-					int top = 20;
+					int top = 5;
 					int left, right, bottom;
 					left = right = bottom = 0; // set top, right and bottom to 0
 					// creates a new row to be added to the TableView
@@ -265,7 +265,7 @@ public class PracticePlannerActivity extends Activity {
 		// gets the table layout
 		TableLayout tl = (TableLayout) findViewById(R.id.tableLayout);
 		// assign values to margins of table row
-		int top = 20;
+		int top = 5;
 		int left, right, bottom;
 		left = right = bottom = 0; // set top, right and bottom to 0
 		// creates a new row to be added to the TableView
