@@ -58,4 +58,5 @@
     
     <!-- Stat Sheet Hub Strings -->
     <string name="open_stat_sheet_header">Stat Sheets</string>
+    <string name="new_stat_sheet">New</string>
 </resources>

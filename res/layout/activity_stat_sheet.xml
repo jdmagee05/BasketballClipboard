@@ -138,6 +138,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:weightSum="5"
             android:background="#FFFFFF" >
 
             <EditText
@@ -184,6 +185,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:weightSum="5"
             android:background="#FFFFFF" >
 
             <EditText
@@ -230,6 +232,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:weightSum="5"
             android:background="#FFFFFF" >
 
             <EditText
@@ -276,6 +279,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:weightSum="5"
             android:background="#FFFFFF" >
 
             <EditText
@@ -322,6 +326,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:weightSum="5"
             android:background="#FFFFFF" >
 
             <EditText
@@ -368,6 +373,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:weightSum="5"
             android:background="#FFFFFF" >
 
             <EditText
@@ -414,6 +420,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:weightSum="5"
             android:background="#FFFFFF" >
 
             <EditText
@@ -460,6 +467,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:weightSum="5"
             android:background="#FFFFFF" >
 
             <EditText
@@ -506,6 +514,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:weightSum="5"
             android:background="#FFFFFF" >
 
             <EditText
@@ -552,6 +561,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:weightSum="5"
             android:background="#FFFFFF" >
 
             <EditText
@@ -598,6 +608,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:weightSum="5"
             android:background="#FFFFFF" >
 
             <EditText
@@ -644,6 +655,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:weightSum="5"
             android:background="#FFFFFF" >
 
             <EditText

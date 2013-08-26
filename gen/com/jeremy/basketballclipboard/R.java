@@ -43,12 +43,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int navigation_cancel=0x7f020008;
     }
     public static final class id {
-        public static final int action_deletePractice=0x7f090071;
-        public static final int action_hubNewPractice=0x7f09006f;
-        public static final int action_newPractice=0x7f090070;
+        public static final int action_deletePractice=0x7f090072;
+        public static final int action_hubNewPractice=0x7f090070;
+        public static final int action_newPractice=0x7f090071;
         public static final int action_new_clipboard=0x7f09006e;
-        public static final int action_openStatSheet=0x7f090073;
-        public static final int action_savePractice=0x7f090072;
+        public static final int action_new_stat_sheet=0x7f09006f;
+        public static final int action_savePractice=0x7f090073;
         public static final int action_saveSheet=0x7f090074;
         public static final int action_settings=0x7f09006d;
         public static final int addDrillButton=0x7f090014;
@@ -205,6 +205,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int hello_world=0x7f06002c;
         public static final int new_clipboard=0x7f060015;
         public static final int new_practice=0x7f060028;
+        public static final int new_stat_sheet=0x7f06002e;
         public static final int open_practice=0x7f06000b;
         public static final int open_statSheet=0x7f060025;
         /**  Stat Sheet Hub Strings 

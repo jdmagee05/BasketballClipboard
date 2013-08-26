@@ -61,9 +61,9 @@ public class StatSheetActivity extends Activity {
 			NavUtils.navigateUpFromSameTask(this);
 			return true;
 			// add new StatSheet to options menu
-		case R.id.action_openStatSheet:
-			goToStatSheetOpener();
-			return true;
+//		case R.id.action_openStatSheet:
+//			goToStatSheetOpener();
+//			return true;
 		case R.id.action_saveSheet:
 			try {
 				saveStatSheet();

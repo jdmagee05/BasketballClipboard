@@ -130,8 +130,16 @@ public class OpenStatSheetActivity extends Activity {
 			//
 			NavUtils.navigateUpFromSameTask(this);
 			return true;
+		case R.id.action_new_stat_sheet:
+			newStatSheet();
+			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	public void newStatSheet(){
+		Intent intent = new Intent(this, StatSheetActivity.class);
+		startActivity(intent);
 	}
 
 }

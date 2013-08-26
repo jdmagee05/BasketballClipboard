@@ -4,12 +4,12 @@ BasketballClipboard
 Overview
 ----------
 The BasketballClipboard project provides more functionality than just a clip board. On top of the clip board there is 
-a practice editor and a stats sheet so far. There are further plans to implement more functionality.
+a practice editor and a statistics sheet so far. There are further plans to implement more functionality.
 
-### Clip board
-The clip board allows coaches to draw up plays for players.
+### Clipboard
+The clipboard allows coaches to draw up plays for players.
 
-It is incomplete as of now but it will eventually have the ability to change the colour of the marker and also have 
+It is incomplete as of now but it will eventually have the ability to change the colour of the ink and also have 
 an eraser.
 
 ### Practice Planner

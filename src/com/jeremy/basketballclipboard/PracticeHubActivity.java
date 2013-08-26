@@ -131,7 +131,7 @@ public class PracticeHubActivity extends Activity {
 			NavUtils.navigateUpFromSameTask(this);
 			return true;
 		case R.id.action_deletePractice:
-			deletePractice();
+//			deletePractice();
 			return true;
 		case R.id.action_hubNewPractice:
 			newPractice();
@@ -145,7 +145,7 @@ public class PracticeHubActivity extends Activity {
 		startActivity(intent);
 	}
 	
-	public void deletePractice(){
-		//TODO fill in code to delete a practice
-	}
+//	public void deletePractice(){
+//		//TODO fill in code to delete a practice
+//	}
 }
