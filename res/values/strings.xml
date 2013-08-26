@@ -9,7 +9,7 @@
     <string name="stat_sheet">Statistics Sheet</string>
 
     <!-- Practice Planner Strings -->
-    <string name="title_activity_practice_planner">Practice Planner</string>
+    <string name="title_activity_practice_planner">Basketball Assistant</string>
     <string name="practice_title_hint">Name Your Practice</string>
     <string name="practice_hint">Edit your practice here.</string>
     <string name="practice_title">Practice Planner</string>
@@ -25,7 +25,7 @@
     <string name="add_drill">+ Add Drill</string>
 
     <!-- Clipboard Strings -->
-    <string name="title_activity_clipboard">Clipboard</string>
+    <string name="title_activity_clipboard">Basketball Assistant</string>
     <string name="content_desc">An image of a basketball court.</string>
     <string name="new_clipboard">New</string>
     <string name="blue">Blue</string>
@@ -34,7 +34,7 @@
     <string name="eraser">Eraser</string>
 
     <!-- Stat Sheet Strings -->
-    <string name="title_activity_stat_sheet">Stat Sheet</string>
+    <string name="title_activity_stat_sheet">Basketball Assistant</string>
     <string name="player_header">Player</string>
     <string name="points_header">Points</string>
     <string name="assists_header">Asst.</string>
@@ -51,13 +51,11 @@
     <!-- Practice Hub Strings -->
     <string name="delete_practice">Delete</string>
     <string name="new_practice">New</string>
-    <string name="title_activity_practice_hub">Practice Hub</string>
-    <string name="practice_hub_header"><u>Practices</u></string>
-    
-    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_practice_hub">Basketball Assistant</string>
+    <string name="practice_hub_header"><u>Practice Hub</u></string>
     
     <!-- Stat Sheet Hub Strings -->
-    <string name="title_activity_open_stat_sheet">Open a Stat Sheet</string>
-    <string name="open_stat_sheet_header">Stat Sheets</string>
+    <string name="title_activity_open_stat_sheet">Basketball Assistant</string>
+    <string name="open_stat_sheet_header"><u>Statistics Sheet Hub</u></string>
     <string name="new_stat_sheet">New</string>
 </resources>

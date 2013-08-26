@@ -27,6 +27,7 @@ Keep track of each individual players' statistics throughout the game.
 - Save a statistics sheet.
 - Load a specific statistics sheet from the Statistics Sheet Hub.
 - Create a new statistics sheet for a new game from the Statistics Sheet Hub.
+- Delete unwanted or old statistics sheets.
  
 _Contact_
 E-mail: jdmagee93@gmail.com

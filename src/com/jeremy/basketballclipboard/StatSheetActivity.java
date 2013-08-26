@@ -149,10 +149,9 @@ public class StatSheetActivity extends Activity {
 			//
 			NavUtils.navigateUpFromSameTask(this);
 			return true;
-			// add new StatSheet to options menu
-			// case R.id.action_openStatSheet:
-			// goToStatSheetOpener();
-			// return true;
+		case R.id.action_deleteStatSheet:
+			deleteStatSheet();
+			return true;
 		case R.id.action_saveSheet:
 			try {
 				saveStatSheet();
@@ -271,9 +270,16 @@ public class StatSheetActivity extends Activity {
 
 	}
 
-	public void goToStatSheetOpener() {
-		Intent intent = new Intent(this, OpenStatSheetActivity.class);
+	private boolean deleteStatSheet(){
+		EditText statSheetTitle = (EditText) findViewById(R.id.gameName);
+		String fileName = statSheetTitle.getText().toString() + ".txt";
+		File file = new File(sdCard.getAbsolutePath()
+				+ "/BasketballAssistant/StatSheets/" + fileName);
+		boolean deleted = file.delete();
+		Intent intent = new Intent(this,
+				OpenStatSheetActivity.class);
 		startActivity(intent);
+		return deleted;
 	}
 
 }
