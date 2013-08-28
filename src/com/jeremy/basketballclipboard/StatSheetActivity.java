@@ -27,6 +27,7 @@ public class StatSheetActivity extends Activity {
 	// variables needed for opening a stat sheet
 	boolean statSheetOpened = false;
 	String fileName;
+	String teamName;
 	File sdCard = Environment.getExternalStorageDirectory();
 
 	@Override
@@ -45,6 +46,7 @@ public class StatSheetActivity extends Activity {
 			if (extras != null) {
 				statSheetOpened = extras.getBoolean("isFileOpened");
 				fileName = extras.getString("fileName");
+				teamName = extras.getString("teamName");
 			}
 
 			// check that a stat sheet has actually been opened from the
@@ -54,8 +56,12 @@ public class StatSheetActivity extends Activity {
 				String fileNameWithoutExtension;
 				fileNameWithoutExtension = fileName.substring(0,
 						fileName.lastIndexOf('.'));
+				//set the game name
 				EditText statSheetTitle = (EditText) findViewById(R.id.gameName);
 				statSheetTitle.setText(fileNameWithoutExtension);
+				//set the team name
+				EditText teamNameBox = (EditText) findViewById(R.id.teamName);
+				teamNameBox.setText(teamName);
 				// open a file stream to read from the text file which has the
 				// contents of the practice
 				File directory = new File(sdCard.getAbsolutePath()
@@ -65,6 +71,10 @@ public class StatSheetActivity extends Activity {
 						new FileReader(directory));
 
 				String strLine = null;
+				//make sure a team name has been entered
+				if(teamNameBox.getText().toString() != null){
+					strLine = br.readLine();
+				}
 				//go through the text file to get all of the needed values
 				for (int i = 1; i <= 12; i++) {
 					strLine = br.readLine();
@@ -238,6 +248,9 @@ public class StatSheetActivity extends Activity {
 			if (!file.exists()) {
 				file.createNewFile();
 			}
+			EditText teamNameBox = (EditText) findViewById(R.id.teamName);
+			String teamName = teamNameBox.getText().toString();
+			osw.write(teamName+"\n");
 			for (int i = 1; i <= 12; i++) {
 				int rowsId = getResources().getIdentifier("statsRow" + i, "id",
 						getPackageName());

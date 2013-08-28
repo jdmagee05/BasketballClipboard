@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:background="#F87431" >
 
-        <!-- The Team Name Row -->
+        <!-- The Game Name Row -->
         <TableRow
             android:id="@+id/statSheetNameRow"
             android:layout_width="wrap_content"
@@ -31,6 +31,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/game_name_hint"
+                android:inputType="text"
+                android:textColor="#000000" >
+            </EditText>
+        </TableRow>
+        
+        <!-- The Team Name Row -->
+        <TableRow
+            android:id="@+id/statSheetTeamNameRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF" >
+
+            <TextView
+                android:id="@+id/statSheetTeamNameHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/team_name"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/teamName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/team_name_hint"
                 android:inputType="text"
                 android:textColor="#000000" >
             </EditText>

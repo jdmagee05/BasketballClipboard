@@ -1,6 +1,9 @@
 package com.jeremy.basketballclipboard;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -28,7 +31,10 @@ public class OpenStatSheetActivity extends Activity {
 
 	ListView mListView;
 	public String fileName;
+	public String teamName;
 	public boolean isFileOpened = false;
+
+	File sdCard = Environment.getExternalStorageDirectory();
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
@@ -44,29 +50,40 @@ public class OpenStatSheetActivity extends Activity {
 			List<Map> data = generateStatSheetList();
 			ListAdapter adapter = new SimpleAdapter(OpenStatSheetActivity.this,
 					(List<? extends Map<String, String>>) data,
-					R.layout.stat_sheet_list_item, new String[] { "statSheetDate",
-							"listStatSheetName" }, new int[] {
-							R.id.statSheetDate, R.id.listStatSheetName });
+					R.layout.stat_sheet_list_item, new String[] {
+							"statSheetDate", "listStatSheetName",
+							"listStatSheetTeamName" }, new int[] {
+							R.id.statSheetDate, R.id.listStatSheetName,
+							R.id.listStatSheetTeamName });
 			mListView.setAdapter(adapter);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		
+
 		mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
-				// get the name of the file of the practice that was just clicked
-				TextView text = (TextView) arg1.findViewById(R.id.listStatSheetName);
-				fileName = text.getText().toString() + ".txt";
+				// get the name of the file of the practice that was just
+				// clicked
+				TextView gameNameText = (TextView) arg1
+						.findViewById(R.id.listStatSheetName);
+				fileName = gameNameText.getText().toString() + ".txt";
+				TextView teamNameText = (TextView) arg1
+						.findViewById(R.id.listStatSheetTeamName);
+				teamName = teamNameText.getText().toString();
 				isFileOpened = true;
-				//start the new practice activity
+				// start the new practice activity
 				Intent intent = new Intent(OpenStatSheetActivity.this,
 						StatSheetActivity.class);
 				intent.putExtra("isFileOpened", isFileOpened);
 				intent.putExtra("fileName", fileName);
+				intent.putExtra("teamName", teamName);
 				startActivity(intent);
 			}
 
@@ -75,7 +92,7 @@ public class OpenStatSheetActivity extends Activity {
 
 	@SuppressLint("SimpleDateFormat")
 	@SuppressWarnings("rawtypes")
-	public List<Map> generateStatSheetList() throws ParseException {
+	public List<Map> generateStatSheetList() throws ParseException, IOException {
 		List<Map> list = new ArrayList<Map>();
 		Map<String, String> map;
 		// get the directory in which the practice files are located.
@@ -91,11 +108,14 @@ public class OpenStatSheetActivity extends Activity {
 			Date dfileDate = new Date(files[i].lastModified());
 			// turn the date in its desired format to a string
 			String sParsedFileDate = formatter.format(dfileDate);
-			//create a new HashMap to put the data in
+			//get the teamName
+			String teamName = getStatSheetName(files[i].getName());
+			// create a new HashMap to put the data in
 			map = new HashMap<String, String>();
 			// put the data in the map
 			map.put("statSheetDate", "Date: " + sParsedFileDate);
 			map.put("listStatSheetName", fileName);
+			map.put("listStatSheetTeamName", "Team Name: " + teamName);
 			list.add(map);
 		}
 		return list;
@@ -136,10 +156,22 @@ public class OpenStatSheetActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
-	public void newStatSheet(){
+
+	public void newStatSheet() {
 		Intent intent = new Intent(this, StatSheetActivity.class);
 		startActivity(intent);
+	}
+
+	private String getStatSheetName(String files) throws IOException {
+		File directory = new File(sdCard.getAbsolutePath()
+				+ "/BasketballAssistant/StatSheets/" + files);
+		BufferedReader br = new BufferedReader(new FileReader(directory));
+		String statSheetTeamName;
+		String strLine = null;
+		strLine = br.readLine();
+		statSheetTeamName = strLine;
+		br.close();
+		return statSheetTeamName;
 	}
 
 }
