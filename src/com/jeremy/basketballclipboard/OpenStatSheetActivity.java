@@ -108,14 +108,14 @@ public class OpenStatSheetActivity extends Activity {
 			Date dfileDate = new Date(files[i].lastModified());
 			// turn the date in its desired format to a string
 			String sParsedFileDate = formatter.format(dfileDate);
-			//get the teamName
+			// get the teamName
 			String teamName = getStatSheetName(files[i].getName());
 			// create a new HashMap to put the data in
 			map = new HashMap<String, String>();
 			// put the data in the map
 			map.put("statSheetDate", "Date: " + sParsedFileDate);
 			map.put("listStatSheetName", fileName);
-			map.put("listStatSheetTeamName", "Team Name: " + teamName);
+			map.put("listStatSheetTeamName", teamName);
 			list.add(map);
 		}
 		return list;
@@ -166,7 +166,7 @@ public class OpenStatSheetActivity extends Activity {
 		File directory = new File(sdCard.getAbsolutePath()
 				+ "/BasketballAssistant/StatSheets/" + files);
 		BufferedReader br = new BufferedReader(new FileReader(directory));
-		String statSheetTeamName;
+		String statSheetTeamName = null;
 		String strLine = null;
 		strLine = br.readLine();
 		statSheetTeamName = strLine;

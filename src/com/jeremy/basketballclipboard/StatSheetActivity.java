@@ -11,6 +11,8 @@ import java.io.OutputStreamWriter;
 import android.os.Bundle;
 import android.os.Environment;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -56,10 +58,10 @@ public class StatSheetActivity extends Activity {
 				String fileNameWithoutExtension;
 				fileNameWithoutExtension = fileName.substring(0,
 						fileName.lastIndexOf('.'));
-				//set the game name
+				// set the game name
 				EditText statSheetTitle = (EditText) findViewById(R.id.gameName);
 				statSheetTitle.setText(fileNameWithoutExtension);
-				//set the team name
+				// set the team name
 				EditText teamNameBox = (EditText) findViewById(R.id.teamName);
 				teamNameBox.setText(teamName);
 				// open a file stream to read from the text file which has the
@@ -71,11 +73,11 @@ public class StatSheetActivity extends Activity {
 						new FileReader(directory));
 
 				String strLine = null;
-				//make sure a team name has been entered
-				if(teamNameBox.getText().toString() != null){
+				// make sure a team name has been entered
+				if (teamNameBox.getText().toString() != null) {
 					strLine = br.readLine();
 				}
-				//go through the text file to get all of the needed values
+				// go through the text file to get all of the needed values
 				for (int i = 1; i <= 12; i++) {
 					strLine = br.readLine();
 					int index = strLine.indexOf("$");
@@ -92,27 +94,28 @@ public class StatSheetActivity extends Activity {
 					strLine = strLine.substring(index + 1);
 					index = strLine.indexOf("$");
 					String sSteals = strLine.substring(0, index);
-					
-					//turn the strings to integers
+
+					// turn the strings to integers
 					int points = Integer.parseInt(sPoints);
 					int assists = Integer.parseInt(sAssists);
 					int rebs = Integer.parseInt(sRebs);
 					int steals = Integer.parseInt(sSteals);
-					
-					//get the EditText and NumberPickers
-					int rowsId = getResources().getIdentifier("statsRow" + i, "id",
-							getPackageName());
+
+					// get the EditText and NumberPickers
+					int rowsId = getResources().getIdentifier("statsRow" + i,
+							"id", getPackageName());
 					TableRow statsRows = (TableRow) findViewById(rowsId);
 					EditText playerCell = (EditText) statsRows.getChildAt(0);
 					NumberPicker pointsCell = (NumberPicker) statsRows
 							.getChildAt(1);
 					NumberPicker assistsCell = (NumberPicker) statsRows
 							.getChildAt(2);
-					NumberPicker rebsCell = (NumberPicker) statsRows.getChildAt(3);
+					NumberPicker rebsCell = (NumberPicker) statsRows
+							.getChildAt(3);
 					NumberPicker stealsCell = (NumberPicker) statsRows
 							.getChildAt(4);
-					
-					//set the values
+
+					// set the values
 					playerCell.setText(playerName);
 					pointsCell.setValue(points);
 					assistsCell.setValue(assists);
@@ -250,7 +253,7 @@ public class StatSheetActivity extends Activity {
 			}
 			EditText teamNameBox = (EditText) findViewById(R.id.teamName);
 			String teamName = teamNameBox.getText().toString();
-			osw.write(teamName+"\n");
+			osw.write(teamName + "\n");
 			for (int i = 1; i <= 12; i++) {
 				int rowsId = getResources().getIdentifier("statsRow" + i, "id",
 						getPackageName());
@@ -283,16 +286,34 @@ public class StatSheetActivity extends Activity {
 
 	}
 
-	private boolean deleteStatSheet(){
+	private void deleteStatSheet() {
 		EditText statSheetTitle = (EditText) findViewById(R.id.gameName);
-		String fileName = statSheetTitle.getText().toString() + ".txt";
-		File file = new File(sdCard.getAbsolutePath()
-				+ "/BasketballAssistant/StatSheets/" + fileName);
-		boolean deleted = file.delete();
-		Intent intent = new Intent(this,
-				OpenStatSheetActivity.class);
-		startActivity(intent);
-		return deleted;
+		String fileName = statSheetTitle.getText().toString();
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("Are you sure you want to delete " + fileName + "?")
+				.setTitle("Warning!");
+		builder.setPositiveButton("Yes", dialogClickListener)
+		.setNegativeButton("No", dialogClickListener);
+		AlertDialog dialog = builder.create();
+		dialog.show();
 	}
+
+	DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+
+		@Override
+		public void onClick(DialogInterface dialog, int which) {
+			// TODO Auto-generated method stub
+			switch (which) {
+			case DialogInterface.BUTTON_POSITIVE:
+				File file = new File(sdCard.getAbsolutePath()
+						+ "/BasketballAssistant/StatSheets/" + fileName);
+				file.delete();
+				Intent intent = new Intent(StatSheetActivity.this, OpenStatSheetActivity.class);
+				startActivity(intent);
+			case DialogInterface.BUTTON_NEGATIVE:
+				//do nothing, just go back the statistics sheet
+			}
+		}
+	};
 
 }

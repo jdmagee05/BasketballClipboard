@@ -43,15 +43,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int navigation_cancel=0x7f020008;
     }
     public static final class id {
-        public static final int action_deletePractice=0x7f090073;
-        public static final int action_deleteStatSheet=0x7f090075;
-        public static final int action_hubNewPractice=0x7f090071;
-        public static final int action_newPractice=0x7f090072;
-        public static final int action_new_clipboard=0x7f09006f;
-        public static final int action_new_stat_sheet=0x7f090070;
-        public static final int action_savePractice=0x7f090074;
-        public static final int action_saveSheet=0x7f090076;
-        public static final int action_settings=0x7f09006e;
+        public static final int action_deletePractice=0x7f090074;
+        public static final int action_deleteStatSheet=0x7f090076;
+        public static final int action_hubNewPractice=0x7f090072;
+        public static final int action_newPractice=0x7f090073;
+        public static final int action_new_clipboard=0x7f090070;
+        public static final int action_new_stat_sheet=0x7f090071;
+        public static final int action_savePractice=0x7f090075;
+        public static final int action_saveSheet=0x7f090077;
+        public static final int action_settings=0x7f09006f;
         public static final int addDrillButton=0x7f090014;
         public static final int assistsCell1=0x7f090024;
         public static final int assistsCell10=0x7f09005a;
@@ -81,7 +81,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int list=0x7f09000b;
         public static final int listPracticeName=0x7f09006a;
         public static final int listStatSheetName=0x7f09006c;
-        public static final int listStatSheetTeamName=0x7f09006d;
+        public static final int listStatSheetTeamName=0x7f09006e;
         public static final int playerCell1=0x7f090022;
         public static final int playerCell10=0x7f090058;
         public static final int playerCell11=0x7f09005e;
@@ -161,6 +161,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int tableRow2=0x7f09000e;
         public static final int tableRow3=0x7f090013;
         public static final int teamName=0x7f09001a;
+        public static final int teamNameHeader=0x7f09006d;
         public static final int timeText=0x7f090010;
     }
     public static final class layout {
@@ -194,7 +195,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int date_hint=0x7f060026;
         /**  Practice Hub Strings 
          */
-        public static final int delete_practice=0x7f060029;
+        public static final int delete_practice=0x7f06002a;
+        public static final int delete_stat_sheet=0x7f060029;
         public static final int drill=0x7f060010;
         public static final int drill_hint=0x7f060011;
         public static final int duration_hint=0x7f06000f;
@@ -205,16 +207,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int game_name_hint=0x7f060022;
         public static final int green=0x7f060018;
         public static final int new_clipboard=0x7f060015;
-        public static final int new_practice=0x7f06002a;
-        public static final int new_stat_sheet=0x7f06002f;
+        public static final int new_practice=0x7f06002b;
+        public static final int new_stat_sheet=0x7f060030;
         public static final int open_practice=0x7f06000b;
         public static final int open_statSheet=0x7f060027;
-        public static final int open_stat_sheet_header=0x7f06002e;
+        public static final int open_stat_sheet_header=0x7f06002f;
         public static final int player_header=0x7f06001b;
         public static final int player_hint=0x7f060020;
         public static final int points_header=0x7f06001c;
         public static final int practice_hint=0x7f060007;
-        public static final int practice_hub_header=0x7f06002c;
+        public static final int practice_hub_header=0x7f06002d;
         public static final int practice_planner=0x7f060003;
         public static final int practice_title=0x7f060008;
         public static final int practice_title_hint=0x7f060006;
@@ -234,8 +236,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int title_activity_clipboard=0x7f060013;
         /**  Stat Sheet Hub Strings 
          */
-        public static final int title_activity_open_stat_sheet=0x7f06002d;
-        public static final int title_activity_practice_hub=0x7f06002b;
+        public static final int title_activity_open_stat_sheet=0x7f06002e;
+        public static final int title_activity_practice_hub=0x7f06002c;
         /**  Practice Planner Strings 
          */
         public static final int title_activity_practice_planner=0x7f060005;

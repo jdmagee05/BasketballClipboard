@@ -43,12 +43,13 @@
     <string name="player_hint">Player Name</string>
     <string name="game_name">Game Name:</string>
     <string name="game_name_hint">A specific name for this game</string>
-    <string name="team_name">Team Name:</string>
+    <string name="team_name"><u>Team Name:</u></string>
     <string name="team_name_hint">Your Team\'s Name</string>
     <string name="game_date">Date:</string>
     <string name="date_hint">dd/mm/yyyy</string>
     <string name="open_statSheet">Open Stat Sheet</string>
     <string name="save_statSheet">Save</string>
+    <string name="delete_stat_sheet">Delete</string>
 
     <!-- Practice Hub Strings -->
     <string name="delete_practice">Delete</string>

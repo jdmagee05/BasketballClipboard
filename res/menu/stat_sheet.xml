@@ -9,7 +9,7 @@
         android:id="@+id/action_deleteStatSheet"
         android:icon="@drawable/content_discard"
         android:orderInCategory="200"
-        android:title="@string/open_statSheet"
+        android:title="@string/delete_stat_sheet"
         android:showAsAction="ifRoom"/>
     <item
         android:id="@+id/action_saveSheet"

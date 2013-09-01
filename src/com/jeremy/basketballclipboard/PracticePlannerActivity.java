@@ -503,15 +503,34 @@ public class PracticePlannerActivity extends Activity {
 		}
 	}
 
-	public boolean deletePractice() {
+	public void deletePractice() {
 		EditText practiceTitle = (EditText) findViewById(R.id.practiceTitle);
-		String fileName = practiceTitle.getText().toString() + ".txt";
-		File file = new File(sdCard.getAbsolutePath()
-				+ "/BasketballAssistant/Practices/" + fileName);
-		boolean deleted = file.delete();
-		Intent intent = new Intent(PracticePlannerActivity.this,
-				PracticeHubActivity.class);
-		startActivity(intent);
-		return deleted;
+		String fileName = practiceTitle.getText().toString();
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("Are you sure you want to delete the practice "+ fileName + "?")
+				.setTitle("Warning!");
+		builder.setPositiveButton("Yes", dialogDeleteClickListener)
+		.setNegativeButton("No", dialogDeleteClickListener);
+		AlertDialog dialog = builder.create();
+		dialog.show();
 	}
+	
+	DialogInterface.OnClickListener dialogDeleteClickListener = new DialogInterface.OnClickListener() {
+
+		@Override
+		public void onClick(DialogInterface dialog, int which) {
+			// TODO Auto-generated method stub
+			switch (which) {
+			case DialogInterface.BUTTON_POSITIVE:
+				//delete the practice
+				File file = new File(sdCard.getAbsolutePath()
+						+ "/BasketballAssistant/Practices/" + fileName);
+				file.delete();
+				Intent intent = new Intent(PracticePlannerActivity.this, PracticeHubActivity.class);
+				startActivity(intent);
+			case DialogInterface.BUTTON_NEGATIVE:
+				//do nothing, just go back the statistics sheet
+			}
+		}
+	};
 }
