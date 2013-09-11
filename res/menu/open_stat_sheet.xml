@@ -11,5 +11,8 @@
         android:showAsAction="ifRoom"
         android:icon="@drawable/content_new"
         android:title="@string/new_stat_sheet"/>
+    <item android:id="@+id/action_stats_cruncher"
+        android:orderInCategory="300"
+        android:title="@string/stats_summary_header"/>
 
 </menu>

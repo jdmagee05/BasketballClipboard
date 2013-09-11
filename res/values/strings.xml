@@ -56,9 +56,22 @@
     <string name="new_practice">New</string>
     <string name="title_activity_practice_hub">Basketball Assistant</string>
     <string name="practice_hub_header"><u>Practice Hub</u></string>
-    
+
     <!-- Stat Sheet Hub Strings -->
     <string name="title_activity_open_stat_sheet">Basketball Assistant</string>
     <string name="open_stat_sheet_header"><u>Statistics Sheet Hub</u></string>
     <string name="new_stat_sheet">New</string>
+
+    
+    <!-- Stat Summary Strings -->
+    <string name="title_activity_stats_summary">StatsSummaryActivity</string>
+    <string name="stats_summary_header">Stat Cruncher</string>
+    <string name="player_or_team_prompt">Choose Player or Team</string>
+    <string name="specific_player_prompt">Choose Player</string>
+    <string name="specific_team_prompt">Choose Team</string>
+    <string-array name="player_or_team">
+        <item>Player</item>
+        <item>Team</item>
+    </string-array>
+    <string name="stats_summary_button_label">Submit</string>
 </resources>

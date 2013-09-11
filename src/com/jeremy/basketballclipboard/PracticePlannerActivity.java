@@ -519,7 +519,6 @@ public class PracticePlannerActivity extends Activity {
 
 		@Override
 		public void onClick(DialogInterface dialog, int which) {
-			// TODO Auto-generated method stub
 			switch (which) {
 			case DialogInterface.BUTTON_POSITIVE:
 				//delete the practice

@@ -7,7 +7,6 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-
 import android.os.Bundle;
 import android.os.Environment;
 import android.app.Activity;
@@ -31,6 +30,8 @@ public class StatSheetActivity extends Activity {
 	String fileName;
 	String teamName;
 	File sdCard = Environment.getExternalStorageDirectory();
+	
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -292,17 +293,16 @@ public class StatSheetActivity extends Activity {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setMessage("Are you sure you want to delete " + fileName + "?")
 				.setTitle("Warning!");
-		builder.setPositiveButton("Yes", dialogClickListener)
-		.setNegativeButton("No", dialogClickListener);
+		builder.setPositiveButton("Yes", dialogDeleteClickListener)
+		.setNegativeButton("No", dialogDeleteClickListener);
 		AlertDialog dialog = builder.create();
 		dialog.show();
 	}
 
-	DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+	DialogInterface.OnClickListener dialogDeleteClickListener = new DialogInterface.OnClickListener() {
 
 		@Override
 		public void onClick(DialogInterface dialog, int which) {
-			// TODO Auto-generated method stub
 			switch (which) {
 			case DialogInterface.BUTTON_POSITIVE:
 				File file = new File(sdCard.getAbsolutePath()
@@ -315,5 +315,4 @@ public class StatSheetActivity extends Activity {
 			}
 		}
 	};
-
 }

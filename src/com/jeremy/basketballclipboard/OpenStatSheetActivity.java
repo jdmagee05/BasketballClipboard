@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -35,6 +36,10 @@ public class OpenStatSheetActivity extends Activity {
 	public boolean isFileOpened = false;
 
 	File sdCard = Environment.getExternalStorageDirectory();
+
+	// the linked lists of the player names and team names
+	LinkedList<String> playersList = new LinkedList<String>();
+	LinkedList<String> teamsList = new LinkedList<String>();
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
@@ -153,12 +158,19 @@ public class OpenStatSheetActivity extends Activity {
 		case R.id.action_new_stat_sheet:
 			newStatSheet();
 			return true;
+		case R.id.action_stats_cruncher:
+			goToStatsCruncher();
 		}
 		return super.onOptionsItemSelected(item);
 	}
 
 	public void newStatSheet() {
 		Intent intent = new Intent(this, StatSheetActivity.class);
+		startActivity(intent);
+	}
+
+	public void goToStatsCruncher() {
+		Intent intent = new Intent(OpenStatSheetActivity.this, StatsSummaryActivity.class);
 		startActivity(intent);
 	}
 
@@ -173,5 +185,5 @@ public class OpenStatSheetActivity extends Activity {
 		br.close();
 		return statSheetTeamName;
 	}
-
+	
 }

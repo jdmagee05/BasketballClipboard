@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".StatsSummaryActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/stats_summary_header"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <!-- <TextView
+            android:id="@+id/playerOrTeamLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player or Team:" /> -->
+
+        <Spinner
+            android:id="@+id/playerOrTeamSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="#FFA500"
+            android:entries="@array/player_or_team"
+            android:prompt="@string/player_or_team_prompt" />
+
+        <Spinner
+            android:id="@+id/specificPlayerOrTeamSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="#FFA500" />
+
+        <Button
+            android:id="@+id/statsSummaryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/stats_summary_button_label" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <TableLayout
+            android:id="@+id/statSummaryTableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical" >
+        </TableLayout>
+    </ScrollView>
+
+</LinearLayout>
