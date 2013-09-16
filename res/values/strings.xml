@@ -64,7 +64,7 @@
 
     
     <!-- Stat Summary Strings -->
-    <string name="title_activity_stats_summary">StatsSummaryActivity</string>
+    <string name="title_activity_stats_summary">Basketball Assistant</string>
     <string name="stats_summary_header">Stat Cruncher</string>
     <string name="player_or_team_prompt">Choose Player or Team</string>
     <string name="specific_player_prompt">Choose Player</string>

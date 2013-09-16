@@ -9,7 +9,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -36,10 +35,6 @@ public class OpenStatSheetActivity extends Activity {
 	public boolean isFileOpened = false;
 
 	File sdCard = Environment.getExternalStorageDirectory();
-
-	// the linked lists of the player names and team names
-	LinkedList<String> playersList = new LinkedList<String>();
-	LinkedList<String> teamsList = new LinkedList<String>();
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
