@@ -28,6 +28,9 @@ Keep track of each individual players' statistics throughout the game.
 - Load a specific statistics sheet from the Statistics Sheet Hub.
 - Create a new statistics sheet for a new game from the Statistics Sheet Hub.
 - Delete unwanted or old statistics sheets.
+
+### Statistics Cruncher 
+- Calculates stat averages for any player the user chooses.
  
 _Contact_
 E-mail: jdmagee93@gmail.com
