@@ -50,6 +50,7 @@
     <string name="open_statSheet">Open Stat Sheet</string>
     <string name="save_statSheet">Save</string>
     <string name="delete_stat_sheet">Delete</string>
+    <string name="stats_summary_menu_item">Stat Cruncher</string>
 
     <!-- Practice Hub Strings -->
     <string name="delete_practice">Delete</string>
@@ -62,16 +63,18 @@
     <string name="open_stat_sheet_header"><u>Statistics Sheet Hub</u></string>
     <string name="new_stat_sheet">New</string>
 
-    
     <!-- Stat Summary Strings -->
     <string name="title_activity_stats_summary">Basketball Assistant</string>
-    <string name="stats_summary_header">Stat Cruncher</string>
+    <string name="stats_summary_header"><u>Stat Cruncher</u></string>
     <string name="player_or_team_prompt">Choose Player or Team</string>
     <string name="specific_player_prompt">Choose Player</string>
     <string name="specific_team_prompt">Choose Team</string>
+
     <string-array name="player_or_team">
         <item>Player</item>
         <item>Team</item>
     </string-array>
+
     <string name="stats_summary_button_label">Submit</string>
+
 </resources>

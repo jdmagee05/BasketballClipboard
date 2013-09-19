@@ -33,6 +33,8 @@ public class StatsSummaryActivity extends Activity {
 
 	ArrayAdapter<String> playerAdp;
 	ArrayAdapter<String> teamAdp;
+	
+	String[] averages;
 
 	// variable to check if this is the first time the submit button was clicked
 	boolean initalSubmit = true;
@@ -185,25 +187,30 @@ public class StatsSummaryActivity extends Activity {
 				.toString();
 		if (playerOrTeamSelection.equals("Player")) {
 			// calculate that specific players' averages
-			double[] playerAverages = statsCruncher.calculatePlayerAverages(
+			averages = statsCruncher.calculatePlayerAverages(
 					selection, directory);
-			// set the text for the games played text view
-			gamesPlayed.setText("Games Played: " + playerAverages[0]);
-			// create a new TableRow that will display the player averages
-			TableRow statsTableRow = new TableRow(this);
-			statsTableRow.setLayoutParams(trParams);
-			// iterate through the player averages array and create a textView
-			// for each
-			// Start at playerAverages[1] because the games played is at playerAverages[0]
-			for (int i = 1; i < playerAverages.length; i++) {
-				TextView statField = new TextView(this);
-				statField.setText(playerAverages[i] + "");
-				statField.setLayoutParams(textViewParams);
-				statsTableRow.addView(statField);
-			}
-			// add the statsTableRow to the TableLayout
-			tl.addView(statsTableRow);
+
+		} else if (playerOrTeamSelection.equals("Team")) {
+			averages = statsCruncher.calculateTeamAverages(
+					selection, directory);
 		}
+		// set the text for the games played text view
+		gamesPlayed.setText("Games Played: " + averages[0]);
+		// create a new TableRow that will display the player averages
+		TableRow statsTableRow = new TableRow(this);
+		statsTableRow.setLayoutParams(trParams);
+		// iterate through the player averages array and create a textView
+		// for each
+		// Start at playerAverages[1] because the games played is at
+		// playerAverages[0]
+		for (int i = 1; i < averages.length; i++) {
+			TextView statField = new TextView(this);
+			statField.setText(averages[i] + "");
+			statField.setLayoutParams(textViewParams);
+			statsTableRow.addView(statField);
+		}
+		// add the statsTableRow to the TableLayout
+		tl.addView(statsTableRow);
 
 		initalSubmit = false;
 	}
