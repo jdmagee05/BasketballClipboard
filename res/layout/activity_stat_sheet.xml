@@ -6,6 +6,7 @@
     tools:context=".StatSheetActivity" >
 
     <TableLayout
+        android:id="@+id/statsSheetTableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F87431" >
@@ -130,9 +131,9 @@
                 android:textStyle="bold" />
         </TableRow>
 
-        <!-- Row 1 -->
-
-        <TableRow
+        <!-- Row 1 --> 
+  
+       <!--   <TableRow
             android:id="@+id/statsRow1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -178,7 +179,6 @@
                 android:layout_marginRight="5dp" />
         </TableRow>
 
-        <!-- Row 2 -->
 
         <TableRow
             android:id="@+id/statsRow2"
@@ -225,7 +225,7 @@
                 android:layout_weight="1" />
         </TableRow>
 
-        <!-- Row 3 -->
+
 
         <TableRow
             android:id="@+id/statsRow3"
@@ -272,7 +272,7 @@
                 android:layout_weight="1" />
         </TableRow>
 
-        <!-- Row 4 -->
+       
 
         <TableRow
             android:id="@+id/statsRow4"
@@ -319,7 +319,6 @@
                 android:layout_weight="1" />
         </TableRow>
 
-        <!-- Row 5 -->
 
         <TableRow
             android:id="@+id/statsRow5"
@@ -366,7 +365,6 @@
                 android:layout_weight="1" />
         </TableRow>
 
-        <!-- Row 6 -->
 
         <TableRow
             android:id="@+id/statsRow6"
@@ -413,7 +411,6 @@
                 android:layout_weight="1" />
         </TableRow>
 
-        <!-- Row 7 -->
 
         <TableRow
             android:id="@+id/statsRow7"
@@ -460,7 +457,6 @@
                 android:layout_weight="1" />
         </TableRow>
 
-        <!-- Row 8 -->
 
         <TableRow
             android:id="@+id/statsRow8"
@@ -507,7 +503,6 @@
                 android:layout_weight="1" />
         </TableRow>
 
-        <!-- Row 9 -->
 
         <TableRow
             android:id="@+id/statsRow9"
@@ -554,7 +549,6 @@
                 android:layout_weight="1" />
         </TableRow>
 
-        <!-- Row 10 -->
 
         <TableRow
             android:id="@+id/statsRow10"
@@ -601,7 +595,6 @@
                 android:layout_weight="1" />
         </TableRow>
 
-        <!-- Row 11 -->
 
         <TableRow
             android:id="@+id/statsRow11"
@@ -648,7 +641,6 @@
                 android:layout_weight="1" />
         </TableRow>
 
-        <!-- Row 12 -->
 
         <TableRow
             android:id="@+id/statsRow12"
@@ -694,6 +686,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
         </TableRow>
+       -->
+        
     </TableLayout>
 
 </ScrollView>

@@ -11,8 +11,15 @@
         android:showAsAction="ifRoom"
         android:icon="@drawable/content_new"
         android:title="@string/new_stat_sheet"/>
-    <item android:id="@+id/action_stats_cruncher"
+    <item 
+        android:id="@+id/action_filter_stat_sheets"
         android:orderInCategory="300"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/collections_sort_by_size"
+        android:title="Filter by Team"
+        />
+    <item android:id="@+id/action_stats_cruncher"
+        android:orderInCategory="400"
         android:title="@string/stats_summary_menu_item"/>
 
 </menu>

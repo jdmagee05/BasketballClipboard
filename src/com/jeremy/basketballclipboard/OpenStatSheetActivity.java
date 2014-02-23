@@ -16,11 +16,14 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -33,6 +36,7 @@ public class OpenStatSheetActivity extends Activity {
 	public String fileName;
 	public String teamName;
 	public boolean isFileOpened = false;
+	public boolean newStatisticsSheet = false;
 
 	File sdCard = Environment.getExternalStorageDirectory();
 
@@ -47,7 +51,8 @@ public class OpenStatSheetActivity extends Activity {
 			mListView = (ListView) findViewById(R.id.statSheetList);
 			// create a list adapter that will show the individual practices in
 			// the form of a list
-			List<Map> data = generateStatSheetList();
+			String allStatSheets = "All";
+			List<Map> data = generateStatSheetList(allStatSheets);
 			ListAdapter adapter = new SimpleAdapter(OpenStatSheetActivity.this,
 					(List<? extends Map<String, String>>) data,
 					R.layout.stat_sheet_list_item, new String[] {
@@ -84,6 +89,7 @@ public class OpenStatSheetActivity extends Activity {
 				intent.putExtra("isFileOpened", isFileOpened);
 				intent.putExtra("fileName", fileName);
 				intent.putExtra("teamName", teamName);
+				intent.putExtra("newStatisticsSheet", newStatisticsSheet);
 				startActivity(intent);
 			}
 
@@ -92,13 +98,15 @@ public class OpenStatSheetActivity extends Activity {
 
 	@SuppressLint("SimpleDateFormat")
 	@SuppressWarnings("rawtypes")
-	public List<Map> generateStatSheetList() throws ParseException, IOException {
+	public List<Map> generateStatSheetList(String filterParameters)
+			throws ParseException, IOException {
 		List<Map> list = new ArrayList<Map>();
 		Map<String, String> map;
 		// get the directory in which the practice files are located.
 		File sdCard = Environment.getExternalStorageDirectory();
 		File[] files = new File(sdCard.getAbsolutePath()
 				+ "/BasketballAssistant/StatSheets").listFiles();
+		String allTeamsFilter = "All";
 		for (int i = 0; i < files.length; i++) {
 			String fileNameWithExt = files[i].getName();
 			int fileNameCutOffIndex = fileNameWithExt.lastIndexOf(".");
@@ -113,10 +121,18 @@ public class OpenStatSheetActivity extends Activity {
 			// create a new HashMap to put the data in
 			map = new HashMap<String, String>();
 			// put the data in the map
-			map.put("statSheetDate", "Date: " + sParsedFileDate);
-			map.put("listStatSheetName", fileName);
-			map.put("listStatSheetTeamName", teamName);
-			list.add(map);
+			if (allTeamsFilter.equals(filterParameters)) {
+				map.put("statSheetDate", "Date: " + sParsedFileDate);
+				map.put("listStatSheetName", fileName);
+				map.put("listStatSheetTeamName", teamName);
+				list.add(map);
+			}
+			else if(teamName.equals(filterParameters)){
+				map.put("statSheetDate", "Date: " + sParsedFileDate);
+				map.put("listStatSheetName", fileName);
+				map.put("listStatSheetTeamName", teamName);
+				list.add(map);
+			}
 		}
 		return list;
 	}
@@ -155,17 +171,84 @@ public class OpenStatSheetActivity extends Activity {
 			return true;
 		case R.id.action_stats_cruncher:
 			goToStatsCruncher();
+			return true;
+		case R.id.action_filter_stat_sheets:
+			try {
+				openFilterDialog();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}
 
+	private void openFilterDialog() throws IOException {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle("Teams");
+		ArrayList<String> data = getTeamFilterList();
+		final ListAdapter adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, data);
+		builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
+			
+			//set the new filtered list to display the desired data
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				String filterParameters = adapter.getItem(which).toString();
+				try {
+					List<Map> filteredData = generateStatSheetList(filterParameters);
+					ListAdapter adapter = new SimpleAdapter(OpenStatSheetActivity.this,
+							(List<? extends Map<String, String>>) filteredData,
+							R.layout.stat_sheet_list_item, new String[] {
+									"statSheetDate", "listStatSheetName",
+									"listStatSheetTeamName" }, new int[] {
+									R.id.statSheetDate, R.id.listStatSheetName,
+									R.id.listStatSheetTeamName });
+					mListView.setAdapter(adapter);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		builder.create();
+		builder.show();
+	}
+	
+	private ArrayList<String> getTeamFilterList() throws IOException {
+		ArrayList<String> list = new ArrayList<String>();
+		Map<String, String> map;
+		//add "All" to the list in order to retrieve all statistics sheets
+		list.add("All");
+		// get the directory in which the practice files are located.
+		File sdCard = Environment.getExternalStorageDirectory();
+		File[] files = new File(sdCard.getAbsolutePath()
+				+ "/BasketballAssistant/StatSheets").listFiles();
+		for (int i = 0; i < files.length; i++) {
+			String fileNameWithExt = files[i].getName();
+			int fileNameCutOffIndex = fileNameWithExt.lastIndexOf(".");
+			String fileName = fileNameWithExt.substring(0, fileNameCutOffIndex);
+			String teamName = getStatSheetName(files[i].getName());
+			if(!(list.contains(teamName))){
+				list.add(teamName);
+			}
+		}
+		return list;
+	}
+
 	public void newStatSheet() {
+		newStatisticsSheet = true;
 		Intent intent = new Intent(this, StatSheetActivity.class);
+		intent.putExtra("newStatisticsSheet", newStatisticsSheet);
 		startActivity(intent);
 	}
 
 	public void goToStatsCruncher() {
-		Intent intent = new Intent(OpenStatSheetActivity.this, StatsSummaryActivity.class);
+		Intent intent = new Intent(OpenStatSheetActivity.this,
+				StatsSummaryActivity.class);
 		startActivity(intent);
 	}
 
@@ -180,5 +263,5 @@ public class OpenStatSheetActivity extends Activity {
 		br.close();
 		return statSheetTeamName;
 	}
-	
+
 }

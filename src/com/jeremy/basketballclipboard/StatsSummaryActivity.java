@@ -33,11 +33,12 @@ public class StatsSummaryActivity extends Activity {
 
 	ArrayAdapter<String> playerAdp;
 	ArrayAdapter<String> teamAdp;
-	
-	String[] averages;
 
-	// variable to check if this is the first time the submit button was clicked
-	boolean initalSubmit = true;
+	String[] averages; // the array that the player averages or team averages
+						// will be copied to
+
+	boolean initalSubmit = true; // variable to check if this is the first time
+									// the submit button was clicked
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +46,6 @@ public class StatsSummaryActivity extends Activity {
 		setContentView(R.layout.activity_stats_summary);
 		// Show the Up button in the action bar.
 		setupActionBar();
-
-		// populate the lists by call populateLists from StatisticsCruncher
 		try {
 			statsCruncher.populateLists(directory);
 		} catch (IOException e) {
@@ -54,8 +53,8 @@ public class StatsSummaryActivity extends Activity {
 			e.printStackTrace();
 		}
 
-		playerList = statsCruncher.getPlayerList();
-		teamList = statsCruncher.getTeamList();
+		playerList = statsCruncher.getPlayerList(); // generate the player list
+		teamList = statsCruncher.getTeamList(); // generate the team list
 
 		// create the array adapters
 		createArrayAdapters();
@@ -187,12 +186,12 @@ public class StatsSummaryActivity extends Activity {
 				.toString();
 		if (playerOrTeamSelection.equals("Player")) {
 			// calculate that specific players' averages
-			averages = statsCruncher.calculatePlayerAverages(
-					selection, directory);
-
-		} else if (playerOrTeamSelection.equals("Team")) {
-			averages = statsCruncher.calculateTeamAverages(
-					selection, directory);
+			averages = statsCruncher.calculatePlayerAverages(selection,
+					directory);
+		} 
+		else if (playerOrTeamSelection.equals("Team")) {
+			averages = statsCruncher
+					.calculateTeamAverages(selection, directory);
 		}
 		// set the text for the games played text view
 		gamesPlayed.setText("Games Played: " + averages[0]);
